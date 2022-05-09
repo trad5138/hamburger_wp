@@ -1,0 +1,26 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* スマホ・タブレットのサイドバー部表示の時のbodyを覆うスモークの設定 */
+.p-menu-bg {
+	width: 100%;         /* 横幅 100% */
+	height: 100vh;       /* 高さ 100vh */
+	position: fixed;     /* 表示位置 固定*/
+	top: 0;              /* 上からの位置 */
+	left: 100%;          /* 左からの位置 右横外側 0％ で表示させない */
+    transition-property: opacity;
+    transition-duration: 0.3s;
+    opacity: 0;
+    z-index: 1000;
+    
+     /* サイドバーを表示したときに一緒に表示させる */
+    &.is-open {
+		top: 0;             /* 上からの位置設定 */
+		left: 0;          /* 左からの位置設定 スマホは15%*/
+        transition-property: opacity;
+        transition-duration: 0.4s;
+        opacity: 1;
+	}
+}
+

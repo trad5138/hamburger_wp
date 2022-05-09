@@ -1,0 +1,224 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* archive search カード部 の設定 */
+.p-card {
+    display: block;
+    width: 100%;
+    min-height: 58em;            /* 高さ--最小値を設定しておく*/
+    box-sizing: border-box; 
+    margin-top: 2em;
+    /*margin: 1em 0;*/
+
+    @include mixin.mq(tablet) {
+        min-height: 30em; 
+        margin-top: 2em;
+    }
+
+    @include mixin.mq(pc) {
+        min-height: 35em; 
+        margin-top: 3em;
+    } 
+
+    /* archive search カード部 エリアの設定 */
+    &_body {
+        display: block;
+        box-sizing: border-box;
+    
+        @include mixin.mq(tablet) {
+            display: flex;                  /* 横並び */
+            flex-direction: row;            /* 横並び */
+            justify-content: space-between;
+        }
+    
+        @include mixin.mq(pc) {
+            display: flex;
+            flex-direction: row;
+        } 
+    }
+
+    &-image {
+        width: 100%;
+        height: 40%;                    /* 高さ 40％ */
+        position: relative;             /* 表示位置の基準値を設定する */
+        box-sizing: border-box;
+    
+        @include mixin.mq(tablet) {
+            width: 50%;
+            height: auto;
+            padding-top: 40%;             /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+        }
+    
+        @include mixin.mq(pc) {
+            width: 50%;
+            height: auto;
+            padding-top: 25%;             /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+        } 
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: left bottom;            
+
+            @include mixin.mq(tablet) {
+                position: absolute;     /* 表示位置を設定 */
+                top: 0;
+                left: 0;
+                object-position: left bottom; 
+            }
+
+            @include mixin.mq(pc) {
+                position: absolute;     /* 表示位置を設定 */
+                top: 0;
+                left: 0;
+                object-position: left bottom; 
+            } 
+        }
+    }
+}
+
+/* archive search カード部 の テキスト部 の設定 */
+.p-card-item{
+    display: block;
+    width: 100%;
+    height: 60%;
+    padding: 2.5em 2em;
+    box-sizing: border-box;
+
+    @include mixin.mq(tablet) {
+        width: 50%;
+        height: 100%;
+        padding: 2.5em 3.5em;
+    }
+
+    @include mixin.mq(pc) {
+        width: 50%;
+        height: 100%;
+        padding: 4em 4.5em;
+    }
+
+    /*&-title {
+        white-space: nowrap;
+    }*/
+    
+    &-subtitle {
+        margin-top: 0.8em;
+
+        @include mixin.mq(pc) {
+            margin-top: 1em;
+        }
+    } 
+
+    &-text {
+        margin-top: 0.3em;
+
+        @include mixin.mq(pc) {
+            margin-top: 0.5em;
+        }
+    }
+}
+
+.p-card-item-text {
+    & h2 {
+        font-size: variable.$font-size--single-h2--sp;
+        font-weight: variable.$font-weight--bold;
+        letter-spacing: variable.$letter-spacing--h2;
+        color: color.$color-font--card--text;
+        line-height: variable.$line-height--h2;
+
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--single-h2--tablet;
+        }
+
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--single-h2--pc;
+        }   
+    }
+
+    & h3 {
+        font-size: variable.$font-size--single-h3--sp;
+        font-weight: variable.$font-weight--bold;
+        letter-spacing: variable.$letter-spacing--h3;
+        color: color.$color-font--card--text;
+        line-height: variable.$line-height--h3;
+
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--single-h3--tablet;
+        }
+
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--single-h3--pc;
+        }    
+    }
+
+    & h4 {
+        font-size: variable.$font-size--single-h4--sp;
+        font-weight: variable.$font-weight--bold;
+        letter-spacing: variable.$letter-spacing--h4;
+        color: color.$color-font--card--text;
+        line-height: variable.$line-height--h4;
+
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--single-h4--tablet;
+        }
+
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--single-h4--pc;
+        }   
+    }
+
+    & h5 {
+        font-size: variable.$font-size--single-h5--sp;
+        font-weight: variable.$font-weight--bold;
+        letter-spacing: variable.$letter-spacing--h5;
+        color: color.$color-font--card--text;
+        line-height: variable.$line-height--h5;
+
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--single-h5--tablet;
+        }
+
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--single-h5--pc;
+        }    
+    }
+
+    & h6 {
+        font-size: variable.$font-size--single-h6--pc;
+        font-weight: variable.$font-weight--bold;
+        letter-spacing: variable.$letter-spacing--h6;
+        color: color.$color-font--card--text;
+        line-height: variable.$line-height--h5;
+
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--single-h6--tablet;
+        }
+
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--single-h6--pc;
+        }  
+    }
+
+    & p {
+        font-family: variable.$font-family--jp;
+        font-size: variable.$font-size--arcive-card-text--sp;
+        font-weight: variable.$font-weight--normal;
+        color: color.$color-font--card--text;
+        line-height: variable.$line-height--normal;
+
+    
+        @include mixin.mq(tablet) {
+            font-size: variable.$font-size--arcive-card-text--tablet;
+        }
+    
+        @include mixin.mq(pc) {
+            font-size: variable.$font-size--arcive-card-text--pc;
+        }
+        
+        //&:first-line{color:red;font-size:48px;}
+    }
+
+
+}

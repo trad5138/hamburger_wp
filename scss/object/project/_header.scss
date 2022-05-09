@@ -1,0 +1,35 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* ヘッダー部の設定 */
+.p-header_body {
+    position: relative; /* relativeを設定して、表示位置の基準値を設定 */
+    margin: 0 auto;     /* 左右中央揃え */
+    display: flex;      /* flexで子要素を並べる */
+    flex-direction: column;     /* 子要素を縦に並べる */
+    align-items: center;    /* 垂直方向に中央揃え */
+    height: 100%;
+    width: 100%;
+    
+    @include mixin.mq(pc) {
+        flex-direction: row;    /* 子要素を横に並べる */
+        justify-content: space-between;    /* 両端揃えに並べる */
+        /*align-items: center;*/
+        height: 100%;
+        width: 100%;
+    }  
+}
+
+/* ヘッダー部のタイトルの設定 */
+.p-header_title {
+    margin: 3.5em 0 0; /* 上余白の設定 */
+
+    @include mixin.mq(pc) {
+        margin: 0;              /* 上下左右のマージンをzeroに設定 --- スマホ・タブレットのマージンをリセット */
+        margin-left: 6.2em;
+        vertical-align: middle;  /* 上下中央に設定 */
+    }    
+}
+
+

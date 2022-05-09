@@ -1,0 +1,61 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+
+/* ヘッダー部の背景色 */
+.c-bgcolor-header {
+    background-color: color.$color-bg--header;
+}
+
+/* サービスメニュー部の背景色 */
+.c-bgcolor-service-menu {
+    background-color: color.$color-bg--service-menu_body;
+}
+
+/* サービスメニュー アイテムの背景色－白透過 */
+.c-bgcolor-service-menu_item {
+    background-color: color.$color-bg--service-menu-item;
+}
+
+/* サイドバー部の背景色 */
+.c-bgcolor-sidebar {
+    background-color: color.$color-bg--sidebar;
+}
+
+/* スマホ・タブレット サイドバー表示のスモーク背景色 */
+.c-bgcolor-menu-bg {
+    background: color.$color-bg--sideber--transparent;  /* 透過度60% */
+}
+
+/* archive search コンテンツ部の背景色 */
+.c-bgcolor-content {
+    background-color: color.$color-bg--content;
+}
+
+/* archive search カード部の背景色 */
+.c-bgcolor-card {
+    background-color: color.$color-bg--card; 
+}
+
+/* single page blockquote部の背景色 */
+.c-bgcolor-blockquote {
+    background-color: color.$color-bg--quote; 
+}
+
+/* single page code表示部の背景色 */
+.c-bgcolor-code {
+    background-color: color.$color-bg--html; 
+}
+
+/* single page table部の背景色 */
+.c-bgcolor-table {
+    background-color: color.$color-table--body; 
+}
+
+/* search page 検索結果 ない時のホームに戻るボタンの背景色 */
+.c-bgcolor-button_home {
+    background-color: color.$color-bg--button--home; 
+}
+
+

@@ -1,0 +1,326 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* ヘッダー部*/
+/* 検索ボタン 文字*/
+.c-text-header-button {
+    /*font-family: variable.$font-family--jp;*/
+    font-size: variable.$font-size--base;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--search--button;
+}
+
+/* 検索ボックス 文字*/
+.c-text-header-search {
+    /*font-family: variable.$font-family--jp;*/
+    font-size: variable.$font-size--base;    
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--search--box;
+}
+
+
+/* index サービスメニュー内の 白背景エリアのテキスト */
+.c-text-service-menu {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--service-menu-text--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--service-menu--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--service-menu-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--service-menu-text--pc;
+    }
+}
+
+
+/* index ページ 地図の上のテキスト */
+.c-text-map {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--map-text--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--map--text;
+    line-height: variable.$line-height--x-wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--map-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--map-text--pc;
+    }
+}
+
+/* footer  navi-メニューのテキスト */
+.c-text-footer-nav {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--footer-nav--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--footer--nav;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--footer-nav--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--footer-nav--pc;
+    }
+}
+
+/* footer  copyright のテキスト */
+.c-text-footer-copyright {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--copyright--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--footer--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--copyright--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--copyright--pc;
+    }
+}
+
+/* サイドバー MENU テキスト */
+.c-text-sidebar-menu {
+    font-family: variable.$font-family--eng;
+    font-size: variable.$font-size--sidebar-menu--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--sidebar--menu;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--sidebar-menu--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--sidebar-menu--pc;
+    }
+}
+
+/* サイドバー カテゴリー テキスト */
+.c-text-sidebar-category {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--sidebar-category--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--sidebar--catgory;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--sidebar-category--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--sidebar-category--pc;
+    }
+}
+
+/* サイドバー アイテム テキスト */
+.c-text-sidebar-item {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--sidebar-item--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--sidebar--item;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--sidebar-item--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--sidebar-item--pc;
+    }
+}
+
+
+/*archive search ページ 標準テキスト*/
+.c-text-as-base {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-content-text--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-content-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-content-text--pc;
+    }
+}
+
+/*archive search ページ カードエリア テキスト*/
+.c-text-as-card {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-card-text--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--card--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-card-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-card-text--pc;
+    }    
+}
+
+/*archive search ページ カードエリア ボタン テキスト*/
+.c-text-as-card-button {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-button--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--card--button;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-button--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-button--pc;
+    }    
+}
+
+/*archive search ページ ホームに戻るボタン テキスト*/
+.c-text-as-botton_home {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-button--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text--white;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-button--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-button--pc;
+    }    
+}
+
+/*archive search ページネーション テキスト  ↑↑ は違うと思うのでここで書き直す*/
+.c-text-as-pagination {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-pagination--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--pagination;
+    line-height: variable.$line-height--small;
+
+    @include mixin.mq(tablet) {
+        font-family: variable.$font-family--eng;
+        font-size: variable.$font-size--arcive-pagination--tablet;
+        font-weight: variable.$font-weight--bold;
+    }
+
+    @include mixin.mq(pc) {
+        font-family: variable.$font-family--eng;
+        font-size: variable.$font-size--arcive-pagination--pc;
+        font-weight: variable.$font-weight--bold;
+    }
+    
+    /*&.is-this {
+        @include mixin.mq(tablet) {
+            color: color.$color-font--pagination--this;
+            font-size: variable.$font-size--arcive-pagination--tablet;
+        }
+    
+        @include mixin.mq(pc) {
+            color: color.$color-font--pagination--this;
+            font-size: variable.$font-size--arcive-pagination--pc;
+        }
+
+    }*/
+}
+
+/*single ページ コンテンツエリア テキスト*/
+.c-text-si-base {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-text--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-text--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア リンク*/
+.c-text-si-link {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-text--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--link;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-text--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 見出し３*/
+.c-text-si-button {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-text--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-text--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 太文字*/
+.c-text-si-bold {
+    font-weight: variable.$font-weight--bold;
+}
+
+/*single ページ コンテンツエリア 太文字*/
+.c-text-404 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-text--sp;
+    font-weight: variable.$font-weight--normal;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-text--pc;
+    }  
+    
+    & > p a {
+        text-decoration: underline;
+        color: color.$color-font--link;
+    }
+}
+    
+
+
+

@@ -1,0 +1,301 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* index ヘッダータイトル Humbarger */
+.c-title-header {
+    font-family: variable.$font-family--eng;
+    font-size: variable.$font-size--header--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--header--title;
+    line-height: variable.$line-height--middle;
+   
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--header--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--header--pc;
+        /*font-size: clamp(variable.$font-size--header--tablet, 3.33vw, variable.$font-size--header--pc);*/
+    }
+
+    & > a {
+        color: color.$color-font--header--title;
+    }
+}
+
+/* index メインヴィジュアル のタイトル ダミーサイト */
+.c-title-main-visual {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--main-visual-title--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--main-visual--title;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--main-visual-title--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--main-visual-title--pc;
+    }
+}
+
+/* index サービスメニュー の タイトル  TAKE OUT EAT IN */
+.c-title-service-menu {
+    font-family: variable.$font-family--eng;
+    font-size: variable.$font-size--service-menu-title--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--service-menu--title;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--service-menu-title--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--service-menu-title--pc;
+    }
+}
+
+/* index サービスメニュー内の 白背景エリアの タイトル*/
+.c-title-service-menu-subtitle {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--service-menu-subtitle--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--service-menu--subtitle;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--service-menu-subtitle--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--service-menu-subtitle--pc;
+    }
+}
+
+/* index ページ 地図の上のタイトル */
+.c-title-access-map {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--map-title--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--map--title;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--map-title--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--map-title--pc;
+    }
+}
+
+/*archive search ページ メインヴィジュアル タイトル*/
+.c-title-as-main-visual {
+    font-family: variable.$font-family--eng;
+    font-size: variable.$font-size--arcive-mainvisual-title--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--main-visual--title;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-mainvisual-title--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-mainvisual-title--pc;
+    }
+}
+
+/*archive search ページ メインヴィジュアル サブタイトル チーズバーガーなど*/
+.c-title-as-main-visual-subtitle {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-mainvisual-subtitle--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--main-visual--title;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-mainvisual-subtitle--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-mainvisual-subtitle--pc;
+    }    
+}
+
+/*archive search ページ コンテンツ タイトル 小見出しが入ります*/
+.c-title-as-content {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-content-title--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-content-title--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-content-title--pc;
+    }    
+}
+
+/*archive search ページ カードエリア タイトル チーズバーガーなど*/
+.c-title-as-card {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-card-title--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--card--title;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-card-title--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: clamp(variable.$font-size--arcive-card-title--tablet, 1.875vw, variable.$font-size--arcive-card-title--pc);
+        /*font-size: variable.$font-size--arcive-card-title--pc;*/
+    }    
+}
+
+/*archive search ページ カードエリア サブタイトル 小見出しが入ります*/
+.c-title-as-card-subtitle {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--arcive-card-subtitle--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--card--subtitle;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--arcive-card-subtitle--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--arcive-card-subtitle--pc;
+        font-size: clamp(variable.$font-size--arcive-card-subtitle--tablet, 1.875vw, variable.$font-size--arcive-card-subtitle--pc);
+    }    
+}
+
+/*single ページ メインヴィジュアル タイトル チーズバーガーなど*/
+.c-title-si-main-visual {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h1--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--main-visual--title;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h1--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h1--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 見出し１*/
+.c-title-si-h1 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h1--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h1--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h1--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 見出し２*/
+.c-title-si-h2 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h2--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h2--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h2--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 見出し３*/
+.c-title-si-h3 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h3--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h3--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h3--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 見出し４*/
+.c-title-si-h4 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h4--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h4--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h4--pc;
+    }    
+}
+
+/*single ページ コンテンツエリア 見出し５*/
+.c-title-si-h5 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h5--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h5--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h5--pc;
+    }    
+}
+
+
+/*single ページ コンテンツエリア 見出し６*/
+.c-title-si-h6 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h6--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h6--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h6--pc;
+    }    
+}
+

@@ -1,0 +1,101 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* メインヴィジュアル画像 */
+.c-image-main-visual-bg{
+    background-image: url(../images/mainvisual-sp@2x.jpg);  /* スマホ用は画素の多いものを使用*/
+
+    @include mixin.mq(tablet) {
+        background-image: url(../images/mainvisual-pc@2x.jpg);  /* タブレット用はPC用の画素の多いものを使用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/mainvisual-pc.jpg);  /* PC用はPC用の通常画素を使用*/
+        /*background-image: url(../../../images/mainvisual-pc@2x.jpg);*/    /* PC用の画素の多いもの*/
+    }
+}
+
+/* サービスメニュー画像 */
+/* テイクアウト */
+.c-image-service-menu-bg_takeout {
+    background-image: url(../images/servicemenu-takeout.png);  /* スマホ用は画素の多いものを使用*/
+}
+
+/* イートイン */
+.c-image-service-menu-bg_eatint {
+    background-image: url(../images/servicemenu-eatin.png);  /* スマホ用は画素の多いものを使用*/
+}
+
+/* アクセス マップ画像 - googleマップを使用したため使っていない */
+.c-image-access-map-bg {
+    background-image: url(../images/map-sp.png); /* スマホ用 */
+
+    @include mixin.mq(tablet) {
+        background-image: url(../images/map-tb.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/map-pc.png);  /* PC用*/
+    }
+}
+
+/* footer の背景画像 */
+.c-image-footer-bg {
+    background-image: url(../images/footer_img.png);
+    background-position: center center;  /* 中央の配置 */
+    background-size: cover;              /* 画像の縦横比保持して全体に覆う*/
+    background-repeat: no-repeat;        /* リピートしない */
+}
+
+/* archive search メインヴィジュアル画像 */
+.c-image-as-main-visual-bg {
+    background-image: url(../images/mainvisual-as-sp.png);  /* スマホ用*/
+
+    @include mixin.mq(tablet) {
+        background-image: url(../images/mainvisual-as-sp.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/mainvisual-as-pc.png);  /* PC用*/
+    }
+}
+
+/* archive search card 画像 */
+.c-image-as-card-bg {
+    background-image: url(../images/card-pc.png);  /* スマホ用*/
+
+    /*@include mixin.mq(tablet) {
+        background-image: url(../images/mainvisual-as-sp.png); */ /* タブレット用*/
+    /*}*/
+
+    /*@include mixin.mq(pc) {
+        background-image: url(../images/mainvisual-as-pc.png);*/  /* PC用*/
+    /*}*/
+}
+
+/* single メインヴィジュアル画像 */
+.c-image-single-main-visual-bg {
+    background-image: url(../images/single-sp.png);  /* スマホ用*/
+
+    @include mixin.mq(tablet) {
+       background-image: url(../images/single-tb.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/single-pc.png);  /* PC用*/
+    }
+}
+
+/* page メインヴィジュアル画像 */
+.c-image-page-main-visual-bg {
+    background-image: url(../images/shop-sp.png);  /* スマホ用*/
+
+    @include mixin.mq(tablet) {
+       background-image: url(../images/shop-tb.png);  /* タブレット用*/
+    }
+
+    @include mixin.mq(pc) {
+        background-image: url(../images/shop-pc.png);  /* PC用*/
+    }
+}

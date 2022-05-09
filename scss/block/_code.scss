@@ -1,0 +1,20 @@
+@use "../foundation/mixin";
+@use "../foundation/palette";
+@use "../foundation/color";
+@use "../foundation/variable";
+
+/* コードエリアの設定*/
+.wp-block-code {
+	background-color: color.$color-bg--html; 
+	padding: 2em;
+
+	code {
+		color: color.$color-font--text;
+		white-space: pre-wrap;
+		overflow-x: auto;
+		display: block;
+		font-family: variable.$font-family--jp;
+		border: none;
+  		border-radius: 0;
+	}
+}

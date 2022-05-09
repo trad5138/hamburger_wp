@@ -1,0 +1,214 @@
+@use "sass:math";
+
+/*文字サイズ ベースサイズ*/
+$baseFontSize: 16;  /*ベースサイズ 16px*/
+
+/*文字サイズ rem計算*/
+@function rem($px, $context: $baseFontSize) {
+    @return (math.div($px,$context)) * 1rem;
+}
+
+/*文字サイズのレスポンシブ*/
+@function fontSize-Sp($maxFont) {
+    $minWidth: 300;
+    $maxWidth: 599;
+    $maxFontSize: $maxFont * 1px;
+    $fontVw: round($maxFont / $maxWidth * 100 * 1000) / 1000;
+    $minFontSize: round($minWidth * ($fontVw / 100) );
+    @return clamp(#{$minFontSize},#{$fontVw}vw,#{$maxFontSize});
+}
+
+
+/*文字サイズ*/
+/*基本フォントサイズ*/
+$font-size--base--sp: 1.6rem; /*後でサイズ調整する たぶん 1.4remぐらい*/
+$font-size--base--tablet: 1.6rem; /*後でサイズ調整する たぶん 1.6remぐらい*/
+$font-size--base--pc: 1.6rem; /*後でサイズ調整する たぶん 2.0remぐらい*/
+$font-size--base: 1.6rem; /*後でサイズ調整する たぶん 2.0remぐらい*/
+
+/*ヘッダーフォントサイズ*/
+$font-size--header--sp: 4.0rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--header--tablet: 4.0rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--header--pc: 6.4rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+
+/*メインビジュアル タイトルフォントサイズ*/
+$font-size--main-visual-title--sp: 3.6rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--main-visual-title--tablet: 3.6rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--main-visual-title--pc: 4.0rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+
+/*index コンテンツフォントサイズ*/
+$font-size--service-menu-title--sp: 4.1rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--service-menu-title--tablet: 4.4rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--service-menu-title--pc: 6.0rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+$font-size--service-menu-subtitle--sp: 2.2rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--service-menu-subtitle--tablet: 2.4rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--service-menu-subtitle--pc: 2.4rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+$font-size--service-menu-text--sp: 1.6rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--service-menu-text--tablet: 1.6rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--service-menu-text--pc: 1.6rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+
+/*map area フォントサイズ*/
+$font-size--map-title--sp: 3.0rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--map-title--tablet: 3.0rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--map-title--pc: 3.0rem; /*後でサイズ調整する たぶん 3.0remぐらい*/
+$font-size--map-text--sp: 1.4rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--map-text--tablet: 1.4rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--map-text--pc: 1.6rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+
+/*footer area フォントサイズ*/
+$font-size--footer-nav--sp: 2.0rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--footer-nav--tablet: 2.0rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--footer-nav--pc: 2.0rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+
+/*copyright フォントサイズ*/
+$font-size--copyright--sp: 1.4rem; /*後でサイズ調整する たぶん 2.4remぐらい*/
+$font-size--copyright--tablet: 1.4rem; /*後でサイズ調整する たぶん 3.2remぐらい*/
+$font-size--copyright--pc: 1.4rem; /*後でサイズ調整する たぶん 4.0remぐらい*/
+
+/*sidebar フォントサイズ*/
+$font-size--sidebar-menu--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--sidebar-menu--tablet: 3.4rem; /*後でサイズ調整する*/
+$font-size--sidebar-menu--pc: 3.4rem; /*後でサイズ調整する*/
+$font-size--sidebar-category--sp: 2.4rem; /*後でサイズ調整する*/
+$font-size--sidebar-category--tablet: 2.4rem; /*後でサイズ調整する*/
+$font-size--sidebar-category--pc: 2.4rem; /*後でサイズ調整する*/
+$font-size--sidebar-item--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--sidebar-item--tablet: 2.0rem; /*後でサイズ調整する*/
+$font-size--sidebar-item--pc: 2.0rem; /*後でサイズ調整する*/
+
+/*archive search page タイトル フォントサイズ*/
+$font-size--arcive-mainvisual-title--sp: 3.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-title--tablet: 6.0rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-title--pc: 6.0rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-subtitle--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-subtitle--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-mainvisual-subtitle--pc: 1.6rem; /*後でサイズ調整する*/
+
+/*archive search page コンテンツ フォントサイズ*/
+$font-size--arcive-content-title--sp: 2.8rem; /*後でサイズ調整する*/
+$font-size--arcive-content-title--tablet: 3.6rem; /*後でサイズ調整する*/
+$font-size--arcive-content-title--pc: 3.6rem; /*後でサイズ調整する*/
+$font-size--arcive-content-text--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-content-text--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-content-text--pc: 1.6rem; /*後でサイズ調整する*/
+
+/*archive search page カードエリア フォントサイズ*/
+$font-size--arcive-card-title--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--arcive-card-title--tablet: 2.0rem; /*後でサイズ調整する*/
+$font-size--arcive-card-title--pc: 3.6rem; /*後でサイズ調整する*/
+$font-size--arcive-card-subtitle--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-card-subtitle--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-card-subtitle--pc: 2.4rem; /*後でサイズ調整する*/
+$font-size--arcive-card-text--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-card-text--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-card-text--pc: 1.6rem; /*後でサイズ調整する*/
+
+/*archive search page ボタン フォントサイズ*/
+$font-size--arcive-button--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-button--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-button--pc: 1.6rem; /*後でサイズ調整する*/
+
+/*archive search page ページネーション フォントサイズ*/
+$font-size--arcive-pagination--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-pagination--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--arcive-pagination--pc: 1.6rem; /*後でサイズ調整する*/
+
+/*single page フォントサイズ ここから設定すること*/
+$font-size--single-h1--sp: 3.6rem; /*後でサイズ調整する*/
+$font-size--single-h1--tablet: 6.0rem; /*後でサイズ調整する*/
+$font-size--single-h1--pc: 6.0rem; /*後でサイズ調整する*/
+
+$font-size--single-h2--sp: 2.8rem; /*後でサイズ調整する*/
+$font-size--single-h2--tablet: 3.6rem; /*後でサイズ調整する*/
+$font-size--single-h2--pc: 3.6rem; /*後でサイズ調整する*/
+
+$font-size--single-h3--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h3--tablet: 2.8rem; /*後でサイズ調整する*/
+$font-size--single-h3--pc: 2.8rem; /*後でサイズ調整する*/
+
+$font-size--single-h4--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h4--tablet: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h4--pc: 2.0rem; /*後でサイズ調整する*/
+
+$font-size--single-h5--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h5--tablet: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h5--pc: 2.0rem; /*後でサイズ調整する*/
+
+$font-size--single-h6--sp: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h6--tablet: 2.0rem; /*後でサイズ調整する*/
+$font-size--single-h6--pc: 2.0rem; /*後でサイズ調整する*/
+
+$font-size--single-text--sp: 1.6rem; /*後でサイズ調整する*/
+$font-size--single-text--tablet: 1.6rem; /*後でサイズ調整する*/
+$font-size--single-text--pc: 1.6rem; /*後でサイズ調整する*/
+
+/*フォントサイズ*/
+$font-size--base: 1.6rem;
+$font-size--small: 1.4rem;
+$font-size--medium: 2.0rem;
+$font-size--large: 2.2rem;
+$font-size--x-large: 2.4rem;
+$font-size--xx-large: 2.8rem;
+$font-size--3x-large: 3.0rem;
+$font-size--4x-large: 3.4rem;
+$font-size--5x-large: 3.6rem;
+$font-size--6x-large: 4.0rem;
+$font-size--7x-large: 4.1rem;
+$font-size--8x-large: 4.4rem;
+$font-size--9x-large: 6.0rem;
+$font-size--ax-large: 6.4rem;
+$font-size--bx-large: 8.0rem;
+
+/*文字の太さ*/
+$font-weight--light: 300; 
+$font-weight--normal: 400;
+$font-weight--bold: 700;
+
+/*文字の間隔*/
+$letter-spacing--normal: normal;
+$letter-spacing--h1: normal;
+$letter-spacing--h2: normal;
+$letter-spacing--h3: normal;
+$letter-spacing--h4: normal;
+$letter-spacing--h5: 0.05em;
+$letter-spacing--h6: 0.05em;
+
+/*フォントファミリ*/
+$font-family--eng: 'Roboto',sans-serif; 
+$font-family--jp: 'M+ 1M',sans-serif;
+//$font-family--jp: 'mplus1p',sans-serif;
+$font-family:  'Roboto',sans-serif,'M+ 1M';
+
+/*ラインハイト*/
+$line-height--small: 1; 
+$line-height--normal: 1.6; 
+$line-height--middle: 1.7;
+$line-height--wide: 2;
+$line-height--x-wide: 2.2;
+$line-height--2x-wide: 2.5;
+$line-height--h1: 1.1; 
+$line-height--h2: 1.3; 
+$line-height--h3: 1.3; 
+$line-height--h4: 1.3; 
+$line-height--h5: 1.3; 
+$line-height--h6: 1.3; 
+
+/*余白*/
+$margin--small: 5px; 
+$margin--middle: 25px;
+$margin--large: 50px;
+
+/*ボーダーの太さ*/
+$border-weight--normal: 1px; 
+$border-weight--bold: 5px;
+
+/*角丸*/
+$radius--small: 4px; 
+$radius--middle: 8px; 
+$radius--large: 10px; 
+$radius--x-large: 20px;
+
+/*透過度*/
+$opacity--thin: .04; 
+$opacity--normal: .6; 
+$opacity--dark: .8; 

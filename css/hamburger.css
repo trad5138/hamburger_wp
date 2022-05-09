@@ -1,0 +1,4363 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0-modified | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* make sure to set some focus styles for accessibility */
+:focus {
+  outline: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type=search] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-sizing: content-box;
+}
+
+textarea {
+  overflow: auto;
+  vertical-align: top;
+  resize: vertical;
+}
+
+/**
+ * Correct `inline-block` display not defined in IE 6/7/8/9 and Firefox 3.
+ */
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  max-width: 100%;
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+/**
+ * Address styling not present in IE 7/8/9, Firefox 3, and Safari 4.
+ * Known issue: no IE 6 support.
+ */
+[hidden] {
+  display: none;
+}
+
+/**
+ * 1. Correct text resizing oddly in IE 6/7 when body `font-size` is set using
+ *    `em` units.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-size: 100%;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0;
+}
+
+/**
+ * 1. Remove border when inside `a` element in IE 6/7/8/9 and Firefox 3.
+ * 2. Improve image quality when scaled in IE 7.
+ */
+img {
+  border: 0;
+  /* 1 */
+  -ms-interpolation-mode: bicubic;
+  /* 2 */
+}
+
+/**
+ * Address margin not present in IE 6/7/8/9, Safari 5, and Opera 11.
+ */
+figure {
+  margin: 0;
+}
+
+/**
+ * Correct margin displayed oddly in IE 6/7.
+ */
+form {
+  margin: 0;
+}
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+/**
+ * 1. Correct color not being inherited in IE 6/7/8/9.
+ * 2. Correct text not wrapping in Firefox 3.
+ * 3. Correct alignment displayed oddly in IE 6/7.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  white-space: normal;
+  /* 2 */
+  *margin-left: -7px;
+  /* 3 */
+}
+
+/**
+ * 1. Correct font size not being inherited in all browsers.
+ * 2. Address margins set differently in IE 6/7, Firefox 3+, Safari 5,
+ *    and Chrome.
+ * 3. Improve appearance and consistency in all browsers.
+ */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  vertical-align: baseline;
+  /* 3 */
+  *vertical-align: middle;
+  /* 3 */
+}
+
+/**
+ * Address Firefox 3+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 6+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ * 4. Remove inner spacing in IE 7 without affecting normal text inputs.
+ *    Known issue: inner spacing remains in IE 6.
+ */
+button,
+html input[type=button],
+input[type=reset],
+input[type=submit] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */
+  *overflow: visible;
+  /* 4 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * 1. Address box sizing set to content-box in IE 8/9.
+ * 2. Remove excess padding in IE 8/9.
+ * 3. Remove excess padding in IE 7.
+ *    Known issue: excess padding remains in IE 6.
+ */
+input[type=checkbox],
+input[type=radio] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
+  *height: 13px;
+  /* 3 */
+  *width: 13px;
+  /* 3 */
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type=search] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * Remove inner padding and border in Firefox 3+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove default vertical scrollbar in IE 6/7/8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */
+}
+
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html,
+button,
+input,
+select,
+textarea {
+  color: #222;
+}
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.chromeframe {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* mixin */
+/* ブレイクポイントの設定 */
+/* マップの定義 */
+/* mixinの定義 */
+/* Color Palette */
+/* color 色の設定*/
+/*検索ボタンのグラデーションで使用*/
+/* color 透過色の設定*/
+/* 文字・背景色の設定 */
+/*文字カラー*/
+/*背景カラー*/
+/*$color-bg--service-menu_item: palette.$palette-white;*/
+/*$color-bg--map--cover: palette.$palette-white;*/
+/*背景 カラー 透過*/
+/*引用タグ背景カラー*/
+/*HTMLタグ背景カラー*/
+/*ボタン背景カラー*/
+/*serach box 背景 カラー*/
+/*ボーダー（線）カラー*/
+/*テーブルカラー*/
+/*文字サイズ ベースサイズ*/
+/*ベースサイズ 16px*/
+/*文字サイズ rem計算*/
+/*文字サイズのレスポンシブ*/
+/*文字サイズ*/
+/*基本フォントサイズ*/
+/*後でサイズ調整する たぶん 1.4remぐらい*/
+/*後でサイズ調整する たぶん 1.6remぐらい*/
+/*後でサイズ調整する たぶん 2.0remぐらい*/
+/*後でサイズ調整する たぶん 2.0remぐらい*/
+/*ヘッダーフォントサイズ*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*メインビジュアル タイトルフォントサイズ*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*index コンテンツフォントサイズ*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*map area フォントサイズ*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 3.0remぐらい*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*footer area フォントサイズ*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*copyright フォントサイズ*/
+/*後でサイズ調整する たぶん 2.4remぐらい*/
+/*後でサイズ調整する たぶん 3.2remぐらい*/
+/*後でサイズ調整する たぶん 4.0remぐらい*/
+/*sidebar フォントサイズ*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*archive search page タイトル フォントサイズ*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*archive search page コンテンツ フォントサイズ*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*archive search page カードエリア フォントサイズ*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*archive search page ボタン フォントサイズ*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*archive search page ページネーション フォントサイズ*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*single page フォントサイズ ここから設定すること*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*後でサイズ調整する*/
+/*フォントサイズ*/
+/*文字の太さ*/
+/*文字の間隔*/
+/*フォントファミリ*/
+/*ラインハイト*/
+/*余白*/
+/*ボーダーの太さ*/
+/*角丸*/
+/*透過度*/
+:root {
+  font-size: 62.5%;
+}
+
+/* 共通 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*html {*/
+/*font-size: 62.5%;*/
+/*}*/
+body {
+  font-family: "Roboto", sans-serif, "M+ 1M";
+  line-height: 1.6;
+}
+
+main {
+  display: block;
+}
+
+/* aタグ リンクの初期設定 */
+a {
+  text-decoration: none;
+}
+a:link {
+  color: inherit;
+}
+a:visited {
+  color: inherit;
+}
+a:hover {
+  color: inherit;
+}
+a:focus {
+  color: inherit;
+  outline: 0;
+}
+a:active {
+  color: inherit;
+}
+
+/* iPhone 丸くなるのを解除 */
+input[type=submit],
+input[type=search] {
+  -webkit-appearance: none;
+}
+
+/* buttonタグ リンクの初期設定 */
+/*button {
+    border: none;  */
+/* 枠線なし*/
+/*background-color: transparent; */
+/*背景色を無効にする*/
+/*font-size: 0;*/
+/*}*/
+strong {
+  font-weight: 700;
+}
+
+/*ボタンの設定*/
+.wp-block-button__link {
+  color: #3c2a10;
+  background-color: #e6e0dc;
+  border-radius: 20px;
+  box-shadow: none;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1.125em;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  text-align: center;
+  text-decoration: none;
+  word-break: break-word;
+  box-sizing: border-box;
+  border: 1px solid #707070;
+}
+
+/* コードエリアの設定*/
+.wp-block-code {
+  background-color: #f5f5f5;
+  padding: 2em;
+}
+.wp-block-code code {
+  color: #3c2a10;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  display: block;
+  font-family: "M+ 1M", sans-serif;
+  border: none;
+  border-radius: 0;
+}
+
+/* カラー 背景色 文字色 */
+.has-light-brown-background-color {
+  background-color: #9d8670;
+}
+
+.has-light-brown-color {
+  color: #9d8670;
+}
+
+.has-dark-brown-background-color {
+  background-color: #3c2a10;
+}
+
+.has-dark-brown-color {
+  color: #3c2a10;
+}
+
+.has-black-brown-background-color {
+  background-color: #3c2b1c;
+}
+
+.has-black-brown-color {
+  color: #3c2b1c;
+}
+
+.has-sand-background-color {
+  background-color: #f2ede9;
+}
+
+.has-sand-color {
+  color: #f2ede9;
+}
+
+.has-gray-background-color {
+  background-color: #787878;
+}
+
+.has-gray-color {
+  color: #787878;
+}
+
+.has-gemini-gray-background-color {
+  background-color: #707070;
+}
+
+.has-gemini-gray-color {
+  color: #707070;
+}
+
+.has-black-background-color {
+  background-color: #000000;
+}
+
+.has-black-color {
+  color: #000000;
+}
+
+.has-white-background-color {
+  background-color: #ffffff;
+}
+
+.has-white-color {
+  color: #ffffff;
+}
+
+.has-ivory-background-color {
+  background-color: #fffdfa;
+}
+
+.has-ivory-color {
+  color: #fffdfa;
+}
+
+.has-whitesmoke-background-color {
+  background-color: #f5f5f5;
+}
+
+.has-whitesmoke-color {
+  color: #f5f5f5;
+}
+
+.has-seashell-background-color {
+  background-color: #fff7ef;
+}
+
+.has-seashell-color {
+  color: #fff7ef;
+}
+
+.has-blue-background-color {
+  background-color: #4a6c9b;
+}
+
+.has-blue-color {
+  color: #4a6c9b;
+}
+
+/*フォントサイズ*/
+.has-small-font-siza {
+  font-size: 1.4rem;
+}
+
+.has-normal-font-siza {
+  font-size: 1.6rem;
+}
+
+.has-medium-font-siza {
+  font-size: 2rem;
+}
+
+.has-large-font-siza {
+  font-size: 2.2rem;
+}
+
+.has-x-large-font-siza {
+  font-size: 2.4rem;
+}
+
+.has-xx-large-font-siza {
+  font-size: 2.8rem;
+}
+
+.has-3x-large-font-siza {
+  font-size: 3rem;
+}
+
+.has-4x-large-font-siza {
+  font-size: 3.4rem;
+}
+
+.has-5x-large-font-siza {
+  font-size: 3.6rem;
+}
+
+.has-6x-large-font-siza {
+  font-size: 4rem;
+}
+
+.has-7x-large-font-siza {
+  font-size: 4.1rem;
+}
+
+.has-8x-large-font-siza {
+  font-size: 4.4rem;
+}
+
+.has-9x-large-font-siza {
+  font-size: 6rem;
+}
+
+.has-ax-large-font-siza {
+  font-size: 6.4rem;
+}
+
+/* ギャラリーエリアの設定*/
+.wp-block-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.wp-block-gallery:not(.is-cropped) {
+  align-self: flex-start;
+}
+.wp-block-gallery.has-nested-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.wp-block-gallery.has-nested-images figure.wp-block-image {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex-direction: column;
+  max-width: 100%;
+}
+.wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
+  margin: 0;
+  width: 100%;
+}
+.wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image):last-of-type:not(#individual-image), .wp-block-gallery.has-nested-images figure.wp-block-image:not(#individual-image):nth-of-type(even) {
+  margin-right: 0;
+}
+.wp-block-gallery.has-nested-images figure.wp-block-image img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.wp-block-gallery.has-nested-images:not(.is-cropped) figure.wp-block-image:not(#individual-image) {
+  margin-top: 0;
+  margin-bottom: auto;
+}
+.wp-block-gallery.has-nested-images:not(.is-cropped) figure.wp-block-image:not(#individual-image) img {
+  margin-bottom: 0.5em;
+}
+.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) {
+  align-self: flex-start;
+}
+.wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) a, .wp-block-gallery.has-nested-images.is-cropped figure.wp-block-image:not(#individual-image) img {
+  max-width: 100%;
+  flex: 1 0 0%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 600px) {
+  .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image) {
+    margin: 0;
+    width: 48%;
+    -moz-column-gap: 0.5em;
+         column-gap: 0.5em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .wp-block-gallery.has-nested-images.columns-default figure.wp-block-image:not(#individual-image) {
+    margin: 0;
+    width: 32%;
+    -moz-column-gap: 0.5em;
+         column-gap: 0.5em;
+  }
+}
+/*見出しフォントサイズ*/
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  clear: both;
+  font-family: "Roboto", sans-serif, "M+ 1M";
+  font-weight: 400;
+}
+h1 strong,
+.h1 strong,
+h2 strong,
+.h2 strong,
+h3 strong,
+.h3 strong,
+h4 strong,
+.h4 strong,
+h5 strong,
+.h5 strong,
+h6 strong,
+.h6 strong {
+  font-weight: 700;
+}
+
+h1,
+.h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.1;
+}
+@media screen and (min-width: 600px) {
+  h1,
+.h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  h1,
+.h1 {
+    font-size: 6rem;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  h2,
+.h2 {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  h2,
+.h2 {
+    font-size: 3.6rem;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  h3,
+.h3 {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  h3,
+.h3 {
+    font-size: 2.8rem;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  h4,
+.h4 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  h4,
+.h4 {
+    font-size: 2rem;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  h5,
+.h5 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  h5,
+.h5 {
+    font-size: 2rem;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  h6,
+.h6 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  h6,
+.h6 {
+    font-size: 2rem;
+  }
+}
+
+/* メディア・テキストエリアの設定*/
+.wp-block-media-text {
+  /*!rtl:begin:ignore*/
+  direction: ltr;
+  /*!rtl:end:ignore*/
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  grid-template-rows: auto;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+  /*column-gap: 5%;*/
+}
+@media screen and (min-width: 600px) {
+  .wp-block-media-text {
+    /*margin: 4em 0;*/
+    /*grid-column-gap: 1em; */
+    /* グリッド間の横余白 */
+    -moz-column-gap: 1em;
+         column-gap: 1em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .wp-block-media-text {
+    /*margin: 4em 0;*/
+    /*grid-column-gap: 2em;*/
+    /* グリッド間の横余白 */
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+  }
+}
+.wp-block-media-text.has-media-on-the-right {
+  grid-template-columns: 1fr 45%;
+}
+.wp-block-media-text .wp-block-media-text__content,
+.wp-block-media-text .wp-block-media-text__media {
+  /*align-self: center;*/
+  align-self: start;
+}
+.wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__content,
+.wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__media {
+  align-self: start;
+}
+.wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__content,
+.wp-block-media-text.is-vertically-aligned-center .wp-block-media-text__media {
+  align-self: center;
+}
+.wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__content,
+.wp-block-media-text.is-vertically-aligned-bottom .wp-block-media-text__media {
+  align-self: end;
+}
+.wp-block-media-text .wp-block-media-text__media {
+  /*!rtl:begin:ignore*/
+  grid-column: 1;
+  grid-row: 1;
+  /*!rtl:end:ignore*/
+  margin: 0;
+}
+.wp-block-media-text .wp-block-media-text__content {
+  direction: ltr;
+  /*!rtl:begin:ignore*/
+  grid-column: 2;
+  grid-row: 1;
+  /*!rtl:end:ignore*/
+  /*padding: 0 8% 0 8%;*/
+  padding: 0;
+  word-break: break-word;
+  font-size: 1.6rem;
+}
+@media screen and (min-width: 600px) {
+  .wp-block-media-text .wp-block-media-text__content {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .wp-block-media-text .wp-block-media-text__content {
+    font-size: 1.6rem;
+  }
+}
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+  /*!rtl:begin:ignore*/
+  grid-column: 2;
+  grid-row: 1;
+  /*!rtl:end:ignore*/
+}
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+  /*!rtl:begin:ignore*/
+  grid-column: 1;
+  grid-row: 1;
+  /*!rtl:end:ignore*/
+}
+
+.wp-block-media-text__media img, .wp-block-media-text__media video {
+  height: auto;
+  max-width: unset;
+  width: 100%;
+  /*vertical-align: middle;*/
+  vertical-align: top;
+}
+
+.wp-block-media-text.is-image-fill .wp-block-media-text__media {
+  height: 100%;
+  min-height: 250px;
+  background-size: cover;
+}
+.wp-block-media-text.is-image-fill .wp-block-media-text__media > a {
+  display: block;
+  height: 100%;
+}
+.wp-block-media-text.is-image-fill .wp-block-media-text__media img {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/*
+* Here we here not able to use a mobile first CSS approach.
+* Custom widths are set using inline styles, and on mobile,
+* we need 100% width, so we use important to overwrite the inline style.
+* If the style were set on mobile first, on desktop styles,
+* we would have no way of setting the style again to the inline style.
+*/
+@media (max-width: 600px) {
+  .wp-block-media-text.is-stacked-on-mobile {
+    /*grid-template-columns: 100% !important;*/
+    grid-template-columns: 50% 1fr !important;
+    grid-template-rows: auto;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right {
+    grid-template-columns: 1fr 50%;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content,
+.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    align-self: start;
+  }
+  .wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-top .wp-block-media-text__content,
+.wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-top .wp-block-media-text__media {
+    align-self: start;
+  }
+  .wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-center .wp-block-media-text__content,
+.wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-center .wp-block-media-text__media {
+    align-self: center;
+  }
+  .wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-bottom .wp-block-media-text__content,
+.wp-block-media-text.is-stacked-on-mobile.is-vertically-aligned-bottom .wp-block-media-text__media {
+    align-self: end;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
+    /*!rtl:begin:ignore*/
+    grid-column: 1;
+    grid-row: 1;
+    /*!rtl:end:ignore*/
+    margin: 0;
+  }
+  .wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+    direction: ltr;
+    /*!rtl:begin:ignore*/
+    grid-column: 2;
+    grid-row: 1;
+    /*!rtl:end:ignore*/
+    /*padding: 0 8% 0 8%;*/
+    padding: 0;
+    word-break: break-word;
+  }
+  .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__media {
+    /*!rtl:begin:ignore*/
+    grid-column: 2;
+    grid-row: 1;
+    /*!rtl:end:ignore*/
+  }
+  .wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
+    /*!rtl:begin:ignore*/
+    grid-column: 1;
+    grid-row: 1;
+    /*!rtl:end:ignore*/
+  }
+
+  /*.wp-block-media-text__media {
+  	img, video {
+  	height: auto;
+  	max-width: unset;
+  	width: 100%;*/
+  /*vertical-align: middle;*/
+  /*vertical-align: top;
+  	}
+  }*/
+  /*.wp-block-media-text.is-image-fill .wp-block-media-text__media {
+  	height: 100%;
+    	min-height: 250px;
+    	background-size: cover;
+
+    	> a {
+  		display: block;
+  		height: 100%;
+    	}
+
+    	img {
+  		position: absolute;
+  		width: 1px;
+  		height: 1px;
+  		padding: 0;
+  		margin: -1px;
+  		overflow: hidden;
+  		clip: rect(0, 0, 0, 0);
+  		border: 0;
+    	}
+  }*/
+}
+/* 引用エリアの設定*/
+.wp-block-quote {
+  overflow-wrap: break-word;
+  border: none;
+  padding: 1.5em 1.3em;
+  background-color: #f5f5f5;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .wp-block-quote {
+    padding: 3.5em 3em;
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .wp-block-quote {
+    padding: 3.5em 3em;
+    font-size: 1.6rem;
+  }
+}
+.wp-block-quote cite {
+  margin-top: 1.3em;
+  font-size: 1.6rem;
+  line-height: 1.6;
+  display: inline-block;
+}
+@media screen and (min-width: 600px) {
+  .wp-block-quote cite {
+    margin-top: 3em;
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .wp-block-quote cite {
+    margin-top: 3em;
+    font-size: 1.6rem;
+  }
+}
+.wp-block-quote cite > a {
+  text-decoration: underline;
+  color: #4a6c9b;
+}
+
+@media screen and (min-width: 1025px) {
+  .l-container {
+    height: 100%;
+    display: grid;
+    /* grid設定 */
+    grid-template-rows: 217px 1fr 150px;
+    /* 縦（行）の設定 */
+    grid-template-columns: 1fr 20%;
+    /* 横（列）の設定 */
+    box-sizing: border-box;
+  }
+}
+
+.l-header {
+  width: 100%;
+  height: 217px;
+}
+@media screen and (min-width: 1025px) {
+  .l-header {
+    grid-row: 1/2;
+    /* グリッド 縦 1-2 */
+    grid-column: 1/2;
+    /* グリッド 横 1-2 */
+  }
+}
+
+.l-main {
+  width: 100%;
+}
+@media screen and (min-width: 1025px) {
+  .l-main {
+    grid-row: 2/3;
+    /* グリッド 縦 2-3 */
+    grid-column: 1/2;
+    /* グリッド 横 1-2 */
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .l-sidebar {
+    grid-row: 1/3;
+    /* グリッド 縦 1-3 */
+    grid-column: 2/3;
+    /* グリッド 横 2-3 */
+  }
+}
+
+.l-footer {
+  width: 100%;
+  height: 150px;
+}
+@media screen and (min-width: 1025px) {
+  .l-footer {
+    grid-row: 3/4;
+    /* グリッド 縦 3-4 */
+    grid-column: 1/3;
+    /* グリッド 横 1-3 */
+  }
+}
+
+/* ヘッダー部の背景色 */
+.c-bgcolor-header {
+  background-color: #fff7ef;
+}
+
+/* サービスメニュー部の背景色 */
+.c-bgcolor-service-menu {
+  background-color: #fffdfa;
+}
+
+/* サービスメニュー アイテムの背景色－白透過 */
+.c-bgcolor-service-menu_item {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+/* サイドバー部の背景色 */
+.c-bgcolor-sidebar {
+  background-color: #f2ede9;
+}
+
+/* スマホ・タブレット サイドバー表示のスモーク背景色 */
+.c-bgcolor-menu-bg {
+  background: rgba(0, 0, 0, 0.6);
+  /* 透過度60% */
+}
+
+/* archive search コンテンツ部の背景色 */
+.c-bgcolor-content {
+  background-color: #fffdfa;
+}
+
+/* archive search カード部の背景色 */
+.c-bgcolor-card {
+  background-color: #3c2b1c;
+}
+
+/* single page blockquote部の背景色 */
+.c-bgcolor-blockquote {
+  background-color: #f5f5f5;
+}
+
+/* single page code表示部の背景色 */
+.c-bgcolor-code {
+  background-color: #f5f5f5;
+}
+
+/* single page table部の背景色 */
+.c-bgcolor-table {
+  background-color: #ffffff;
+}
+
+/* search page 検索結果 ない時のホームに戻るボタンの背景色 */
+.c-bgcolor-button_home {
+  background-color: #3c2b1c;
+}
+
+/* スマホ・タブレット画面のヘッダー部の「MENU」ボタンtag初期設定解除 */
+.c-button-menu {
+  display: inline-block;
+  border: none;
+  background-color: transparent;
+}
+
+/* スマホ・タブレット画面のサイドバー部の「×」ボタンtag初期設定解除 */
+.c-button-close {
+  display: inline-block;
+  border: none;
+  /* 枠線なし*/
+  background-color: transparent;
+  /*背景色を無効にする*/
+  font-size: 0;
+  /*閉じるボタンのテキストをfont-size：0で消す*/
+}
+
+/* 検索ボタンの設定 */
+.c-button-search {
+  display: inline-block;
+  /* inline-blockに設定 */
+  border: 1px solid #707070;
+  /* ボタンの枠線の設定 */
+  border-radius: 8px;
+  /* ボタンの角丸の設定 */
+  padding: 0.2em 1.5em;
+  /* ボタンの縦横の大きさの設定 */
+  box-sizing: border-box;
+  text-align: center;
+  /* 文字を中央揃え */
+  line-height: 2;
+  /* 文字の高さ */
+  margin-left: 0.5em;
+  /* 検索ボックスと検索ボタンの余白 */
+  background-image: linear-gradient(#f2ede9, #e6e0dc);
+  /* グラデーション設定 */
+  box-shadow: inset 2px 2px 2px #f2ede9;
+  /* 内側 横2px 縦2px ぼかし2px 影の広さなし */
+  cursor: pointer;
+  /*要素にマウスポインタ―が乗ったとき*/
+}
+@media screen and (min-width: 600px) {
+  .c-button-search {
+    padding: 0.2em 3em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-button-search {
+    padding: 0.2em 2em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+
+/* archive search card 詳しく見るボタンの設定 */
+.c-button-card {
+  display: inline-block;
+  /* inline-blockに設定 */
+  border: 1px solid #ffffff;
+  /* ボタンの枠線の設定 */
+  border-radius: 100vh;
+  /* ボタンの角丸の設定 */
+  padding: 0.3em 2.5em;
+  /* ボタンの縦横の大きさの設定 */
+  box-sizing: border-box;
+  text-align: center;
+  /* 文字を中央揃え */
+  line-height: 2;
+  /* 文字の高さ */
+  /*margin: 2em auto; */
+  /* 検索ボックスと検索ボタンの余白 */
+  background-color: #ffffff;
+  /* グラデーション設定 */
+  cursor: pointer;
+  /*要素にマウスポインタ―が乗ったとき*/
+}
+@media screen and (min-width: 600px) {
+  .c-button-card {
+    padding: 0.5em 2.5em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-button-card {
+    padding: 1em 5em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+
+/* archive search ホームに戻るボタンの設定 */
+.c-button-home {
+  display: inline-block;
+  /* inline-blockに設定 */
+  border: 1px solid #ffffff;
+  /* ボタンの枠線の設定 */
+  border-radius: 100vh;
+  /* ボタンの角丸の設定 */
+  padding: 0.3em 2.5em;
+  /* ボタンの縦横の大きさの設定 */
+  box-sizing: border-box;
+  text-align: center;
+  /* 文字を中央揃え */
+  line-height: 2;
+  /* 文字の高さ */
+  /*margin: 2em auto; */
+  /* 検索ボックスと検索ボタンの余白 */
+  background-color: #3c2b1c;
+  /* グラデーション設定 */
+  cursor: pointer;
+  /*要素にマウスポインタ―が乗ったとき*/
+}
+@media screen and (min-width: 600px) {
+  .c-button-home {
+    padding: 0.5em 2.5em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-button-home {
+    padding: 1em 5em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+
+/* single page ボタンの設定 */
+.c-button-si {
+  display: inline-block;
+  /* inline-blockに設定 */
+  border: 1px solid #707070;
+  /* ボタンの枠線の設定 */
+  border-radius: 20px;
+  /* ボタンの角丸の設定 */
+  padding: 1.7em 1.5em;
+  /* ボタンの縦横の大きさの設定 */
+  box-sizing: border-box;
+  text-align: center;
+  /* 文字を中央揃え */
+  background-image: linear-gradient(#f2ede9, #e6e0dc);
+  /* グラデーション設定 */
+  box-shadow: inset 2px 2px 2px #f2ede9;
+  /* 内側 横2px 縦2px ぼかし2px 影の広さなし */
+  cursor: pointer;
+  /*要素にマウスポインタ―が乗ったとき*/
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .c-button-si {
+    padding: 2.4em 2em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-button-si {
+    padding: 2.4em 2em;
+    /* ボタンの縦横の大きさの設定 */
+  }
+}
+
+/* メインヴィジュアル画像 */
+.c-image-main-visual-bg {
+  background-image: url(../images/mainvisual-sp@2x.jpg);
+  /* スマホ用は画素の多いものを使用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-main-visual-bg {
+    background-image: url(../images/mainvisual-pc@2x.jpg);
+    /* タブレット用はPC用の画素の多いものを使用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-main-visual-bg {
+    background-image: url(../images/mainvisual-pc.jpg);
+    /* PC用はPC用の通常画素を使用*/
+    /*background-image: url(../../../images/mainvisual-pc@2x.jpg);*/
+    /* PC用の画素の多いもの*/
+  }
+}
+
+/* サービスメニュー画像 */
+/* テイクアウト */
+.c-image-service-menu-bg_takeout {
+  background-image: url(../images/servicemenu-takeout.png);
+  /* スマホ用は画素の多いものを使用*/
+}
+
+/* イートイン */
+.c-image-service-menu-bg_eatint {
+  background-image: url(../images/servicemenu-eatin.png);
+  /* スマホ用は画素の多いものを使用*/
+}
+
+/* アクセス マップ画像 - googleマップを使用したため使っていない */
+.c-image-access-map-bg {
+  background-image: url(../images/map-sp.png);
+  /* スマホ用 */
+}
+@media screen and (min-width: 600px) {
+  .c-image-access-map-bg {
+    background-image: url(../images/map-tb.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-access-map-bg {
+    background-image: url(../images/map-pc.png);
+    /* PC用*/
+  }
+}
+
+/* footer の背景画像 */
+.c-image-footer-bg {
+  background-image: url(../images/footer_img.png);
+  background-position: center center;
+  /* 中央の配置 */
+  background-size: cover;
+  /* 画像の縦横比保持して全体に覆う*/
+  background-repeat: no-repeat;
+  /* リピートしない */
+}
+
+/* archive search メインヴィジュアル画像 */
+.c-image-as-main-visual-bg {
+  background-image: url(../images/mainvisual-as-sp.png);
+  /* スマホ用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-as-main-visual-bg {
+    background-image: url(../images/mainvisual-as-sp.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-as-main-visual-bg {
+    background-image: url(../images/mainvisual-as-pc.png);
+    /* PC用*/
+  }
+}
+
+/* archive search card 画像 */
+.c-image-as-card-bg {
+  background-image: url(../images/card-pc.png);
+  /* スマホ用*/
+  /*@include mixin.mq(tablet) {
+      background-image: url(../images/mainvisual-as-sp.png); */
+  /* タブレット用*/
+  /*}*/
+  /*@include mixin.mq(pc) {
+      background-image: url(../images/mainvisual-as-pc.png);*/
+  /* PC用*/
+  /*}*/
+}
+
+/* single メインヴィジュアル画像 */
+.c-image-single-main-visual-bg {
+  background-image: url(../images/single-sp.png);
+  /* スマホ用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-single-main-visual-bg {
+    background-image: url(../images/single-tb.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-single-main-visual-bg {
+    background-image: url(../images/single-pc.png);
+    /* PC用*/
+  }
+}
+
+/* page メインヴィジュアル画像 */
+.c-image-page-main-visual-bg {
+  background-image: url(../images/shop-sp.png);
+  /* スマホ用*/
+}
+@media screen and (min-width: 600px) {
+  .c-image-page-main-visual-bg {
+    background-image: url(../images/shop-tb.png);
+    /* タブレット用*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-image-page-main-visual-bg {
+    background-image: url(../images/shop-pc.png);
+    /* PC用*/
+  }
+}
+
+/* サーチボックス の設定 */
+.c-searchform-searchbox {
+  border: 1px solid #707070;
+  /* ボックスの枠線の色と線の種類と線の太さを設定 */
+  border-radius: 8px;
+  /* ボックスの角丸を設定 */
+  background-color: #ffffff;
+  /* ボックスの背景色を設定 */
+  box-sizing: border-box;
+  line-height: 2;
+  /* 文字の高さを設定 */
+  font-size: 1.6rem;
+  /* 文字の大きさを設定 */
+}
+
+/* ヘッダー部*/
+/* 検索ボタン 文字*/
+.c-text-header-button {
+  /*font-family: variable.$font-family--jp;*/
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #707070;
+}
+
+/* 検索ボックス 文字*/
+.c-text-header-search {
+  /*font-family: variable.$font-family--jp;*/
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #707070;
+}
+
+/* index サービスメニュー内の 白背景エリアのテキスト */
+.c-text-service-menu {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #3c2a10;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-service-menu {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-service-menu {
+    font-size: 1.6rem;
+  }
+}
+
+/* index ページ 地図の上のテキスト */
+.c-text-map {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2.2;
+}
+@media screen and (min-width: 600px) {
+  .c-text-map {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-map {
+    font-size: 1.6rem;
+  }
+}
+
+/* footer  navi-メニューのテキスト */
+.c-text-footer-nav {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-footer-nav {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-footer-nav {
+    font-size: 2rem;
+  }
+}
+
+/* footer  copyright のテキスト */
+.c-text-footer-copyright {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-footer-copyright {
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-footer-copyright {
+    font-size: 1.4rem;
+  }
+}
+
+/* サイドバー MENU テキスト */
+.c-text-sidebar-menu {
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #707070;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-sidebar-menu {
+    font-size: 3.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-sidebar-menu {
+    font-size: 3.4rem;
+  }
+}
+
+/* サイドバー カテゴリー テキスト */
+.c-text-sidebar-category {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #707070;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-sidebar-category {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-sidebar-category {
+    font-size: 2.4rem;
+  }
+}
+
+/* サイドバー アイテム テキスト */
+.c-text-sidebar-item {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #707070;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-sidebar-item {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-sidebar-item {
+    font-size: 2rem;
+  }
+}
+
+/*archive search ページ 標準テキスト*/
+.c-text-as-base {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #3c2a10;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-as-base {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-as-base {
+    font-size: 1.6rem;
+  }
+}
+
+/*archive search ページ カードエリア テキスト*/
+.c-text-as-card {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-as-card {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-as-card {
+    font-size: 1.6rem;
+  }
+}
+
+/*archive search ページ カードエリア ボタン テキスト*/
+.c-text-as-card-button {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #707070;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-as-card-button {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-as-card-button {
+    font-size: 1.6rem;
+  }
+}
+
+/*archive search ページ ホームに戻るボタン テキスト*/
+.c-text-as-botton_home {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-as-botton_home {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-as-botton_home {
+    font-size: 1.6rem;
+  }
+}
+
+/*archive search ページネーション テキスト  ↑↑ は違うと思うのでここで書き直す*/
+.c-text-as-pagination {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #707070;
+  line-height: 1;
+  /*&.is-this {
+      @include mixin.mq(tablet) {
+          color: color.$color-font--pagination--this;
+          font-size: variable.$font-size--arcive-pagination--tablet;
+      }
+
+      @include mixin.mq(pc) {
+          color: color.$color-font--pagination--this;
+          font-size: variable.$font-size--arcive-pagination--pc;
+      }
+
+  }*/
+}
+@media screen and (min-width: 600px) {
+  .c-text-as-pagination {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-as-pagination {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+}
+
+/*single ページ コンテンツエリア テキスト*/
+.c-text-si-base {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #3c2a10;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-si-base {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-si-base {
+    font-size: 1.6rem;
+  }
+}
+
+/*single ページ コンテンツエリア リンク*/
+.c-text-si-link {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #4a6c9b;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-si-link {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-si-link {
+    font-size: 1.6rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し３*/
+.c-text-si-button {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-si-button {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-si-button {
+    font-size: 1.6rem;
+  }
+}
+
+/*single ページ コンテンツエリア 太文字*/
+.c-text-si-bold {
+  font-weight: 700;
+}
+
+/*single ページ コンテンツエリア 太文字*/
+.c-text-404 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #3c2a10;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-text-404 {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-text-404 {
+    font-size: 1.6rem;
+  }
+}
+.c-text-404 > p a {
+  text-decoration: underline;
+  color: #4a6c9b;
+}
+
+/* index ヘッダータイトル Humbarger */
+.c-title-header {
+  font-family: "Roboto", sans-serif;
+  font-size: 4rem;
+  font-weight: 700;
+  color: #707070;
+  line-height: 1.7;
+}
+@media screen and (min-width: 600px) {
+  .c-title-header {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-header {
+    font-size: 6.4rem;
+    /*font-size: clamp(variable.$font-size--header--tablet, 3.33vw, variable.$font-size--header--pc);*/
+  }
+}
+.c-title-header > a {
+  color: #707070;
+}
+
+/* index メインヴィジュアル のタイトル ダミーサイト */
+.c-title-main-visual {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-main-visual {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-main-visual {
+    font-size: 4rem;
+  }
+}
+
+/* index サービスメニュー の タイトル  TAKE OUT EAT IN */
+.c-title-service-menu {
+  font-family: "Roboto", sans-serif;
+  font-size: 4.1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-service-menu {
+    font-size: 4.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-service-menu {
+    font-size: 6rem;
+  }
+}
+
+/* index サービスメニュー内の 白背景エリアの タイトル*/
+.c-title-service-menu-subtitle {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-title-service-menu-subtitle {
+    font-size: 2.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-service-menu-subtitle {
+    font-size: 2.4rem;
+  }
+}
+
+/* index ページ 地図の上のタイトル */
+.c-title-access-map {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-access-map {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-access-map {
+    font-size: 3rem;
+  }
+}
+
+/*archive search ページ メインヴィジュアル タイトル*/
+.c-title-as-main-visual {
+  font-family: "Roboto", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-title-as-main-visual {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-as-main-visual {
+    font-size: 6rem;
+  }
+}
+
+/*archive search ページ メインヴィジュアル サブタイトル チーズバーガーなど*/
+.c-title-as-main-visual-subtitle {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .c-title-as-main-visual-subtitle {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-as-main-visual-subtitle {
+    font-size: 1.6rem;
+  }
+}
+
+/*archive search ページ コンテンツ タイトル 小見出しが入ります*/
+.c-title-as-content {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-as-content {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-as-content {
+    font-size: 3.6rem;
+  }
+}
+
+/*archive search ページ カードエリア タイトル チーズバーガーなど*/
+.c-title-as-card {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-as-card {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-as-card {
+    font-size: clamp(2rem, 1.875vw, 3.6rem);
+    /*font-size: variable.$font-size--arcive-card-title--pc;*/
+  }
+}
+
+/*archive search ページ カードエリア サブタイトル 小見出しが入ります*/
+.c-title-as-card-subtitle {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-as-card-subtitle {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-as-card-subtitle {
+    font-size: 2.4rem;
+    font-size: clamp(1.6rem, 1.875vw, 2.4rem);
+  }
+}
+
+/*single ページ メインヴィジュアル タイトル チーズバーガーなど*/
+.c-title-si-main-visual {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-main-visual {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-main-visual {
+    font-size: 6rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し１*/
+.c-title-si-h1 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 3.6rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-h1 {
+    font-size: 6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-h1 {
+    font-size: 6rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し２*/
+.c-title-si-h2 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-h2 {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-h2 {
+    font-size: 3.6rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し３*/
+.c-title-si-h3 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-h3 {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-h3 {
+    font-size: 2.8rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し４*/
+.c-title-si-h4 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-h4 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-h4 {
+    font-size: 2rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し５*/
+.c-title-si-h5 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-h5 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-h5 {
+    font-size: 2rem;
+  }
+}
+
+/*single ページ コンテンツエリア 見出し６*/
+.c-title-si-h6 {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #3c2a10;
+  line-height: 2;
+}
+@media screen and (min-width: 600px) {
+  .c-title-si-h6 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .c-title-si-h6 {
+    font-size: 2rem;
+  }
+}
+
+/* アクセスマップ エリア */
+.p-access-map {
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  width: 100%;
+  min-height: 69em;
+  /* 高さの最小値を設定 */
+  padding-top: 184.2%;
+  /* 縦横比率を設定 縦長に設定*/
+  /* マップの上にある薄いスモークの設定 */
+  /* マップの上にあり、テキストの下にある濃いスモークの設定 */
+  /* マップの上にある タイトルとテキストのエリアの設定 */
+  /* google マップの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-access-map {
+    min-height: 40em;
+    /* 高さの最小値を設定 */
+    padding-top: 49.7%;
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map {
+    min-height: 64em;
+    /* 高さの最小値を設定 */
+    padding-top: 41.2%;
+    /* 縦横比率を設定  横長に設定 */
+  }
+}
+.p-access-map::before {
+  content: "";
+  width: 100%;
+  /* 薄いスモークの横幅 */
+  height: 100%;
+  /* 薄いスモークの高さ */
+  background-color: rgba(0, 0, 0, 0.3);
+  /* 透過度30% */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置設定 */
+  z-index: 100;
+  /* マップの上に表示 */
+}
+@media screen and (min-width: 600px) {
+  .p-access-map::before {
+    width: 100%;
+    /* 薄いスモークの横幅 */
+    height: 100%;
+    /* 薄いスモークの高さ */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map::before {
+    width: 100%;
+    /* 薄いスモークの横幅 */
+    height: 100%;
+    /* 薄いスモークの高さ */
+  }
+}
+.p-access-map::after {
+  content: "";
+  width: 100%;
+  /* 濃いスモークの横幅 */
+  height: 60%;
+  /* 濃いスモークの高さ */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* 透過度40% */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置設定 */
+  z-index: 200;
+  /* マップの上 ＆ 薄いスモークの上に表示 */
+}
+@media screen and (min-width: 600px) {
+  .p-access-map::after {
+    width: 100%;
+    /* 濃いスモークの横幅 */
+    height: 100%;
+    /* 濃いスモークの高さ */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map::after {
+    width: 60%;
+    /* 濃いスモークの横幅 */
+    height: 100%;
+    /* 濃いスモークの高さ */
+  }
+}
+.p-access-map_inner {
+  display: block;
+  /* blockに設定 */
+  position: relative;
+  /* 表示位置の基準値を設定する z-indexを効かせるため absoluteだと文字数が増えた時に伸縮せず、はみ出る*/
+  margin-top: -184.2%;
+  /* 親要素で縦横比（アスペクト比）を設定しているため、その値分マイナスで上に表示する設定 */
+  width: 100%;
+  /* 横幅の設定 */
+  height: 60%;
+  /* 高さの設定 */
+  padding: 3em 4em;
+  /* 上下左右の余白の設定 */
+  z-index: 300;
+  /* マップの上 ＆ 濃いスモークの上に表示 */
+  /* マップの上にあるタイトルの設定 */
+  /* マップの上にあるテキストの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-access-map_inner {
+    margin-top: -49.7%;
+    /* 親要素で縦横比（アスペクト比）を設定しているため、その値分マイナスで上に表示する設定 */
+    width: 100%;
+    height: 100%;
+    padding: 3em 4em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map_inner {
+    margin-top: -41.2%;
+    /* 親要素で縦横比（アスペクト比）を設定しているため、その値分マイナスで上に表示する設定 */
+    width: 60%;
+    height: 100%;
+    padding: 5.5em 8.5em;
+  }
+}
+.p-access-map_inner_title {
+  display: inline-block;
+  /* inline-blockに設定 */
+  position: relative;
+  /* アンダーラインを疑似要素で表示するために、表示位置の基準値を設定 */
+  /* タイトル下のアンダーラインの設定 */
+}
+.p-access-map_inner_title::after {
+  content: "";
+  position: absolute;
+  /* 表示位置を設定 */
+  left: 0;
+  /* 左からの位置 */
+  bottom: -0.4em;
+  /* 線の上下位置 */
+  display: inline-block;
+  /* inline-blockで設定 */
+  width: 2.5em;
+  /* 線の長さ */
+  height: 2px;
+  /* 線の太さ */
+  transform: translateX(0);
+  /* 位置調整 */
+  background-color: #ffffff;
+  /*線の色*/
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map_inner_title::after {
+    bottom: -1.1em;
+    /* 線の上下位置 */
+  }
+}
+.p-access-map_inner_text {
+  margin-top: 2em;
+  /* 上余白 */
+}
+@media screen and (min-width: 600px) {
+  .p-access-map_inner_text {
+    margin-top: 2.2em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map_inner_text {
+    margin-top: 4.5em;
+  }
+}
+.p-access-map_inner p {
+  margin-top: 2em;
+  /* 上余白 */
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 2.2;
+}
+@media screen and (min-width: 600px) {
+  .p-access-map_inner p {
+    margin-top: 2.2em;
+    font-size: 1.4rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-access-map_inner p {
+    margin-top: 4.5em;
+    font-size: 1.6rem;
+  }
+}
+.p-access-map iframe {
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置 */
+  height: 100%;
+  /* 横幅 */
+  width: 100%;
+  /* 高さ */
+}
+
+/* サイドバーを表示した時、サイドバー以外はスクロールしない設定 */
+body.is-open {
+  position: fixed;
+  /* 表示位置を固定*/
+}
+
+/* ヘッダー部 スマホ・タブレット幅の時にMENUを表示 PC時は非表示 */
+.p-button-menu {
+  position: absolute;
+  top: 0;
+  /* 上からの位置 */
+  right: 0;
+  /* 右からの位置 */
+  padding: 10px 15px;
+  /* 内側余白 */
+}
+@media screen and (min-width: 600px) {
+  .p-button-menu {
+    padding: 10px 15px;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-button-menu {
+    display: none;
+    /* PC非表示 */
+  }
+}
+
+/* スマホ・タブレット時の サイドメニューを開いたときの × 印を表示 PC時は非表示 エリアの設定 */
+.p-button-close_body {
+  width: 100%;
+  height: 80px;
+  position: relative;
+}
+@media screen and (min-width: 1025px) {
+  .p-button-close_body {
+    display: none;
+  }
+}
+
+/* スマホ・タブレット時の サイドメニューを開いたときの × 印を表示 PC時は非表示 */
+.p-button-close {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+@media screen and (min-width: 1025px) {
+  .p-button-close {
+    display: none;
+  }
+}
+.p-button-close::before, .p-button-close::after {
+  content: "";
+  width: 55%;
+  /* 「×」の線の幅 */
+  height: 5px;
+  /* 「×」の線の太さ */
+  background-color: #707070;
+  position: absolute;
+  left: 22.5%;
+  /* 「×」の左からの位置 mathを使う時は @use "sass:math" を設定すること*/
+  top: 50%;
+  /* 「×」の上からの位置 */
+  display: block;
+}
+.p-button-close::before {
+  transform: rotate(45deg);
+  /* 「×」にするために45度 回転 */
+}
+.p-button-close::after {
+  transform: rotate(-45deg);
+  /* 「×」にするために45度 回転 */
+}
+
+/* archive search カード部 ボタンの設定 */
+.p-button-card {
+  margin-top: 4em;
+  margin-bottom: 2em;
+  text-align: center;
+}
+@media screen and (min-width: 600px) {
+  .p-button-card {
+    margin-top: 4.5em;
+    margin-bottom: 2em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-button-card {
+    margin-top: 5.5em;
+    margin-bottom: 2em;
+  }
+}
+
+/* single page ボタンの設定 */
+.p-button-si {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: center;
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .p-button-si {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    text-align: left;
+    width: 58%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-button-si {
+    margin-top: 4em;
+    margin-bottom: 4em;
+    width: 42%;
+  }
+}
+
+/* archive search カード部 の設定 */
+.p-card {
+  display: block;
+  width: 100%;
+  min-height: 58em;
+  /* 高さ--最小値を設定しておく*/
+  box-sizing: border-box;
+  margin-top: 2em;
+  /*margin: 1em 0;*/
+  /* archive search カード部 エリアの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-card {
+    min-height: 30em;
+    margin-top: 2em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card {
+    min-height: 35em;
+    margin-top: 3em;
+  }
+}
+.p-card_body {
+  display: block;
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  .p-card_body {
+    display: flex;
+    /* 横並び */
+    flex-direction: row;
+    /* 横並び */
+    justify-content: space-between;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card_body {
+    display: flex;
+    flex-direction: row;
+  }
+}
+.p-card-image {
+  width: 100%;
+  height: 40%;
+  /* 高さ 40％ */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  .p-card-image {
+    width: 50%;
+    height: auto;
+    padding-top: 40%;
+    /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-image {
+    width: 50%;
+    height: auto;
+    padding-top: 25%;
+    /* 縦横比率を設定 横長に設定 -- レスポンシブ時に画像が小さくなって下余白が表示されるため */
+  }
+}
+.p-card-image > img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+@media screen and (min-width: 600px) {
+  .p-card-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+
+/* archive search カード部 の テキスト部 の設定 */
+.p-card-item {
+  display: block;
+  width: 100%;
+  height: 60%;
+  padding: 2.5em 2em;
+  box-sizing: border-box;
+  /*&-title {
+      white-space: nowrap;
+  }*/
+}
+@media screen and (min-width: 600px) {
+  .p-card-item {
+    width: 50%;
+    height: 100%;
+    padding: 2.5em 3.5em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item {
+    width: 50%;
+    height: 100%;
+    padding: 4em 4.5em;
+  }
+}
+.p-card-item-subtitle {
+  margin-top: 0.8em;
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-subtitle {
+    margin-top: 1em;
+  }
+}
+.p-card-item-text {
+  margin-top: 0.3em;
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text {
+    margin-top: 0.5em;
+  }
+}
+
+.p-card-item-text h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #ffffff;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  .p-card-item-text h2 {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text h2 {
+    font-size: 3.6rem;
+  }
+}
+.p-card-item-text h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #ffffff;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  .p-card-item-text h3 {
+    font-size: 2.8rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text h3 {
+    font-size: 2.8rem;
+  }
+}
+.p-card-item-text h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #ffffff;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  .p-card-item-text h4 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text h4 {
+    font-size: 2rem;
+  }
+}
+.p-card-item-text h5 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  .p-card-item-text h5 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text h5 {
+    font-size: 2rem;
+  }
+}
+.p-card-item-text h6 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #ffffff;
+  line-height: 1.3;
+}
+@media screen and (min-width: 600px) {
+  .p-card-item-text h6 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text h6 {
+    font-size: 2rem;
+  }
+}
+.p-card-item-text p {
+  font-family: "M+ 1M", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.6;
+}
+@media screen and (min-width: 600px) {
+  .p-card-item-text p {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-card-item-text p {
+    font-size: 1.6rem;
+  }
+}
+
+/* contents エリア */
+.p-content {
+  display: block;
+  padding: 2em;
+  /* 内余白の設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-content {
+    /*padding: 2em 4em;*/
+    /* 内余白の設定 */
+    padding: 2em clamp(2em, 3.9vw, 4em);
+    /* 内余白-横余白伸縮の設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content {
+    /*padding: 5em 8em;*/
+    /* 内余白の設定 */
+    padding: 5em clamp(4em, 4.16vw, 8em);
+    /* 内余白-横余白伸縮の設定 */
+  }
+}
+
+/* contents テキストエリア */
+.p-content-text {
+  padding: 1em 0 0 0;
+  /*内余白の設定*/
+}
+@media screen and (min-width: 600px) {
+  .p-content-text {
+    padding: 1em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-text {
+    padding: 1em 0 2em 0;
+  }
+}
+
+/* contents テキストエリア */
+.p-content-archive-text {
+  padding: 1em 0 0 0;
+  /*内余白の設定*/
+}
+@media screen and (min-width: 600px) {
+  .p-content-archive-text {
+    padding: 1em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-archive-text {
+    padding: 1em 0 2em 0;
+  }
+}
+
+/* single page ページ contents エリア */
+.p-content-si {
+  display: block;
+  /*padding: 0 1.3em; */
+  /*内余白の設定*/
+  padding: 2em 1.3em;
+}
+@media screen and (min-width: 600px) {
+  .p-content-si {
+    /*padding: 0 4em; */
+    /*内余白の設定*/
+    padding: 2em 4em;
+    /*padding: 0 clamp(2em, 3.9vw, 4em);*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si {
+    /*padding: 0 8em;*/
+    /* 内余白の設定 */
+    /*padding: 0 clamp(4em, 4.16vw, 8em); */
+    /* 内余白-横余白伸縮の設定 */
+    padding: 4em clamp(4em, 4.16vw, 8em);
+  }
+}
+.p-content-si > ol {
+  font-family: "M+ 1M", sans-serif;
+  margin-left: 3em;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.p-content-si > ol ol {
+  margin-left: 1em;
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.p-content-si > ul {
+  margin-left: 3em;
+}
+.p-content-si > ul ul {
+  margin-left: 1em;
+}
+.p-content-si > * {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 600px) {
+  .p-content-si > * {
+    margin-bottom: 5rem;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si > * {
+    margin-bottom: 5rem;
+  }
+}
+
+/* single page ページ contentsエリア ブロックの設定 */
+.p-content-si-block {
+  display: block;
+  margin: 2rem 0;
+  /* 外余白の設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-content-si-block {
+    margin: 5rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si-block {
+    margin: 5rem 0;
+  }
+}
+.p-content-si-block p {
+  margin: 2rem 0;
+}
+@media screen and (min-width: 600px) {
+  .p-content-si-block p {
+    margin: 5rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si-block p {
+    margin: 5rem 0;
+  }
+}
+
+/*  single page ページ 最下部の余白 */
+.p-content-si-margin {
+  display: block;
+  margin: 0;
+  padding-top: 9.5em;
+}
+@media screen and (min-width: 600px) {
+  .p-content-si-margin {
+    padding-top: 12em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-si-margin {
+    padding-top: 19em;
+  }
+}
+
+/* single page ページ contentsエリア blockquoteエリア の設定 */
+.p-content-blockquote {
+  padding: 0.1em 1.3em;
+}
+@media screen and (min-width: 600px) {
+  .p-content-blockquote {
+    padding: 0.1em 3em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-blockquote {
+    padding: 0.1em 3em;
+  }
+}
+.p-content-blockquote > p a {
+  text-decoration: underline;
+  color: #4a6c9b;
+}
+
+/* single page ページ contentsエリア HTMLコードエリアの設定 */
+.p-content-pre {
+  margin: 2rem 0;
+  padding: 1.5em 3em;
+  white-space: pre-wrap;
+}
+@media screen and (min-width: 600px) {
+  .p-content-pre {
+    margin: 5rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-pre {
+    margin: 6rem 0;
+  }
+}
+
+/* single page ページ contentsエリア tableエリアの設定 */
+.p-content-table {
+  width: 100%;
+  margin: 3rem 0;
+  /*テーブル 列１*/
+  /*テーブル 列２*/
+}
+@media screen and (min-width: 600px) {
+  .p-content-table {
+    margin: 6rem 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-table {
+    margin: 5rem 0;
+  }
+}
+.p-content-table td {
+  padding: 1.6em 1.8em;
+  border: 1px solid #707070;
+}
+.p-content-table-item-1 {
+  width: 40%;
+}
+@media screen and (min-width: 600px) {
+  .p-content-table-item-1 {
+    width: 29%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-table-item-1 {
+    width: 42%;
+  }
+}
+.p-content-table-item-2 {
+  width: 60%;
+}
+@media screen and (min-width: 600px) {
+  .p-content-table-item-2 {
+    width: 71%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-content-table-item-2 {
+    width: 58%;
+  }
+}
+
+/* コピーライト の設定 */
+.p-copyright {
+  text-align: center;
+  padding: 30px 0 15px;
+}
+
+/* フッター部 の メニュー 表示 */
+.p-footer-nav {
+  display: flex;
+  /* 横並び */
+  justify-content: center;
+  /* 中央並び */
+  align-items: center;
+  /* 上下中央並び */
+  padding-top: 40px;
+  /* 上余白 */
+  /* メニューが複数並んだ時に メニューの間に 縦棒 を表示（左側）、最初のメニューには表示しない */
+}
+.p-footer-nav > li {
+  padding: 0 15px;
+  /* 左右余白 */
+  text-align: center;
+  /* 文字 中央揃え */
+}
+.p-footer-nav > li > a {
+  color: #ffffff;
+  /* リンクの文字色 */
+}
+.p-footer-nav > li + li {
+  border-left: 2px solid #ffffff;
+  /* 縦棒の横幅、実線、色 */
+  line-height: 1;
+  /* 縦棒の高さ */
+}
+
+/* ヘッダー部の設定 */
+.p-header_body {
+  position: relative;
+  /* relativeを設定して、表示位置の基準値を設定 */
+  margin: 0 auto;
+  /* 左右中央揃え */
+  display: flex;
+  /* flexで子要素を並べる */
+  flex-direction: column;
+  /* 子要素を縦に並べる */
+  align-items: center;
+  /* 垂直方向に中央揃え */
+  height: 100%;
+  width: 100%;
+}
+@media screen and (min-width: 1025px) {
+  .p-header_body {
+    flex-direction: row;
+    /* 子要素を横に並べる */
+    justify-content: space-between;
+    /* 両端揃えに並べる */
+    /*align-items: center;*/
+    height: 100%;
+    width: 100%;
+  }
+}
+
+/* ヘッダー部のタイトルの設定 */
+.p-header_title {
+  margin: 3.5em 0 0;
+  /* 上余白の設定 */
+}
+@media screen and (min-width: 1025px) {
+  .p-header_title {
+    margin: 0;
+    /* 上下左右のマージンをzeroに設定 --- スマホ・タブレットのマージンをリセット */
+    margin-left: 6.2em;
+    vertical-align: middle;
+    /* 上下中央に設定 */
+  }
+}
+
+/* single page リストタグ部 の設定 */
+.p-list {
+  margin: 2em 0;
+  /* ulタグの上外余白 */
+  /* 上外余白 */
+  /* 左外余白 */
+}
+@media screen and (min-width: 600px) {
+  .p-list {
+    margin: 3em 0;
+    padding: 0 3em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-list {
+    margin: 3em 0;
+    padding: 0em 3em;
+  }
+}
+.p-list__ol {
+  counter-reset: li;
+  /*olのリストの数字をリセット*/
+  margin-top: 1.2em;
+}
+.p-list__ol > li {
+  list-style: none;
+  /*元のスタイルを非表示にする*/
+}
+.p-list__ol > li::before {
+  counter-increment: li;
+  /*リストの数字を1つ進める*/
+  content: counter(li) ".";
+  /*リストを連番にする 連番の後に”.”を付ける */
+  /*margin-right: 1.5em;*/
+  /*要素が重なるから右へ移動*/
+  line-height: 1.6;
+  /*文字が重なるのを防止*/
+}
+.p-list__ul {
+  margin-top: 1.2em;
+}
+.p-list_margin-top {
+  margin-top: 3.5em;
+}
+.p-list_margin-left {
+  margin-left: 1em;
+}
+
+/* メイン 画像 エリア */
+.p-mainvisual-body {
+  display: block;
+  /* ブロック要素にする */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  background-size: cover;
+  /* 画像の縦横比保持して全体に覆う*/
+  background-position: center center;
+  /* 画像は中央に設定*/
+  width: 100%;
+  /* 横幅一杯に*/
+  padding-top: 75%;
+  /* 縦横比 75%にして、画像の縦横比を保持したまま伸縮させる  アスペクト比：4:3 */
+  max-height: 28em;
+  /* 高さ限度280pxに設定 --- 効いていない模様*/
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-body {
+    padding-top: 35%;
+    /* 縦横比 35%にして、画像の縦横比を保持したまま伸縮させる*/
+    max-height: 28em;
+    /* 高さ限度280pxに設定 --- 効いていない模様*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-body {
+    padding-top: 35%;
+    /* 縦横比 35%にして、画像の縦横比を保持したまま伸縮させる PCとタブレットは同じような画像表示のため*/
+    max-height: 38em;
+    /* 高さ限度380pxに設定 --- 効いていない模様*/
+  }
+}
+
+/* メイン 画像 エリア のタイトル文字の設定 */
+.p-mainvisual_title {
+  display: block;
+  /* 上下中央位置に表示させるため、ブロック要素にする */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 50%;
+  /* 上から50%の位置に配置する */
+  transform: translateY(-50%);
+  /* Y方向（縦方向）に -50％（上方向）の位置に配置する topとtransformで上下中央位置に設定*/
+  left: 0.5em;
+  /* スマホは、左から0.5emの位置に配置 */
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual_title {
+    left: 2em;
+    /* タブレットは、左から2emの位置に配置 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual_title {
+    left: 2em;
+    /* PCは、左から2emの位置に配置 -- タブレットと同じ位置 */
+  }
+}
+
+/* archive search メイン 画像 エリア */
+.p-mainvisual-as-body {
+  display: block;
+  /* ブロック要素にする */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  background-size: auto;
+  /* 画像の縦横比保持して全体に覆う*/
+  background-position: 0 center;
+  /* 画像は中央に設定*/
+  background-repeat: no-repeat;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 28em;
+  /* 高さ限度280pxに設定 */
+  /* メイン画像の上にある濃いスモークの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-as-body {
+    background-size: cover;
+    background-position: 0 46.5%;
+    /* 画像は中央に設定*/
+    height: 28em;
+    /* 高さ限度280pxに設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-as-body {
+    background-size: cover;
+    background-position: 0 46.5%;
+    /* 画像は中央に設定*/
+    height: 24em;
+    /* 高さ限度240pxに設定 */
+  }
+}
+.p-mainvisual-as-body::after {
+  content: "";
+  width: 100%;
+  /* 濃いスモークの横幅 */
+  height: 100%;
+  /* 濃いスモークの高さ */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* 透過度40% */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置設定 */
+  z-index: 100;
+  /* マップの上に表示 */
+}
+
+/* archive search メイン 画像 エリア のタイトル文字の設定 */
+.p-mainvisual-as-title {
+  display: block;
+  /* 上下中央位置に表示させるため、ブロック要素にする */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 50%;
+  /* 上から50%の位置に配置する */
+  transform: translateY(-50%);
+  /* Y方向（縦方向）に -50％（上方向）の位置に配置する topとtransformで上下中央位置に設定*/
+  left: 4em;
+  /* スマホは、左から0.5emの位置に配置 */
+  z-index: 200;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-as-title {
+    display: flex;
+    align-items: center;
+    left: 8.5em;
+    /* タブレットは、左から2emの位置に配置 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-as-title {
+    display: flex;
+    align-items: center;
+    left: 6.5em;
+    /* PCは、左から2emの位置に配置 -- タブレットと同じ位置 */
+  }
+}
+.p-mainvisual-as-title_item {
+  margin: 0;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-as-title_item {
+    margin-top: 0.5em;
+    margin-left: 1em;
+  }
+}
+
+/* single メイン 画像 エリア */
+.p-mainvisual-single-body {
+  display: block;
+  /* ブロック要素にする */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  background-position: center center;
+  /* 画像は中央、下を基準に設定*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* 画像の縦横比保持して全体に覆う*/
+  height: 22em;
+  /* 高さ限度220pxに設定 */
+  /* メイン画像の縦横比の設定 -- あまり意味ないかも*/
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-single-body {
+    background-size: cover;
+    height: 50em;
+    /* 高さ限度500pxに設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-single-body {
+    background-size: cover;
+    height: 50em;
+    /* 高さ限度500pxに設定 */
+  }
+}
+.p-mainvisual-single-body::before {
+  content: "";
+  display: block;
+  padding-top: 60%;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-single-body::before {
+    padding-top: 60%;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-single-body::before {
+    padding-top: 32.2%;
+  }
+}
+
+/* single メイン 画像 エリア のタイトル文字の設定 */
+.p-mainvisual-single-title {
+  display: flex;
+  /* 上下中央位置に表示させるため、ブロック要素にする */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 50%;
+  /* 上から50%の位置に配置する */
+  transform: translateY(-50%);
+  /* Y方向（縦方向）に -50％（上方向）の位置に配置する topとtransformで上下中央位置に設定*/
+  left: 2.5em;
+  /* スマホは、左から0.5emの位置に配置 */
+  z-index: 200;
+}
+@media screen and (min-width: 600px) {
+  .p-mainvisual-single-title {
+    display: flex;
+    align-items: center;
+    /*left: 8.5em;*/
+    /* タブレットは、左から8.5emの位置に配置 */
+    left: clamp(2em, 8vw, 8.5em);
+    /* タブレットは、左から8.5emの位置に配置 横幅狭くなると左余白を狭くする*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-mainvisual-single-title {
+    display: flex;
+    align-items: center;
+    left: 8.5em;
+    /* PCは、左から8.5emの位置に配置 -- タブレットと同じ位置 */
+  }
+}
+
+/* スマホ・タブレットのサイドバー部表示の時のbodyを覆うスモークの設定 */
+.p-menu-bg {
+  width: 100%;
+  /* 横幅 100% */
+  height: 100vh;
+  /* 高さ 100vh */
+  position: fixed;
+  /* 表示位置 固定*/
+  top: 0;
+  /* 上からの位置 */
+  left: 100%;
+  /* 左からの位置 右横外側 0％ で表示させない */
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  opacity: 0;
+  z-index: 1000;
+  /* サイドバーを表示したときに一緒に表示させる */
+}
+.p-menu-bg.is-open {
+  top: 0;
+  /* 上からの位置設定 */
+  left: 0;
+  /* 左からの位置設定 スマホは15%*/
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  opacity: 1;
+}
+
+/* ページネーション部の設定*/
+.p-pagination {
+  display: block;
+  width: 100%;
+  margin: 5.5em 0 1em 0;
+}
+@media screen and (min-width: 600px) {
+  .p-pagination {
+    margin: 5em 0 5em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-pagination {
+    margin: 8em 0 8em 0;
+  }
+}
+
+.p-pagination_sp {
+  padding: 0;
+  width: 100%;
+}
+@media screen and (min-width: 600px) {
+  .p-pagination_sp {
+    display: none;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-pagination_sp {
+    display: none;
+  }
+}
+
+.p-pagination-float-right {
+  float: right;
+  margin: 0;
+}
+
+.p-pagination-float-left {
+  float: left;
+  margin: 0;
+}
+
+.p-pagination-float-clear {
+  clear: both;
+}
+
+.p-pagination_tbpc {
+  display: none;
+  /*@include mixin.mq(pc) {
+      display: inline;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+  }*/
+}
+@media screen and (min-width: 600px) {
+  .p-pagination_tbpc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -moz-column-gap: 1.5em;
+         column-gap: 1.5em;
+    /*gap: 0.5em;*/
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.p-pagination_tbpc-pagenum {
+  display: inline-block;
+  width: auto;
+  height: 34px;
+  white-space: nowrap;
+  padding: 0.5em 0;
+}
+
+.p-pagination_tbpc-prev,
+.p-pagination_tbpc-next {
+  display: inline-block;
+  width: auto;
+  height: 34px;
+  text-align: center;
+  white-space: nowrap;
+  padding: 0.5em 0;
+}
+
+.p-pagination_tbpc-item {
+  display: inline-block;
+  background-color: #ffffff;
+  width: 34px;
+  height: 34px;
+  text-align: center;
+  border: 1px solid #707070;
+  box-sizing: border-box;
+}
+.p-pagination_tbpc-item > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em;
+}
+.p-pagination_tbpc-item.is-this {
+  color: #ffffff;
+  background-color: #3c2b1c;
+}
+
+.p-photo-block {
+  display: block;
+  margin: 2em 0;
+  /* 横幅100%の画像部の設定 */
+  /* 中段の中央位置にある画像の設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block {
+    margin: 4em 0;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block {
+    margin: 4em 0;
+  }
+}
+.p-photo-block-image {
+  width: 100%;
+  height: auto;
+  /* 高さ */
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  box-sizing: border-box;
+  padding-top: 37%;
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block-image {
+    padding-top: 37%;
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block-image {
+    padding-top: 37%;
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+.p-photo-block-image > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block-image > img {
+    position: absolute;
+    /* 表示位置を設定 */
+    top: 0;
+    left: 0;
+    -o-object-position: left bottom;
+       object-position: left bottom;
+  }
+}
+.p-photo-block-image_middle {
+  width: 80%;
+  /*position: relative;*/
+  /* 表示位置の基準値を設定する */
+  box-sizing: border-box;
+  /*padding-top: 62%;*/
+  margin: 0 auto;
+}
+@media screen and (min-width: 600px) {
+  .p-photo-block-image_middle {
+    width: 80%;
+    /*padding-top: 62%;*/
+    /* 縦横比率を設定 横長に設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-block-image_middle {
+    width: 43%;
+    /*padding-top: 62%;*/
+    /* 縦横比率を設定 横長に設定 -- これを入れると下余白ができる */
+  }
+}
+.p-photo-block-image_middle > img {
+  width: 100%;
+  height: auto;
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /*left: 0;*/
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+}
+
+/* 写真とテキスト エリアの設定 */
+.p-photo-media-text {
+  margin: 2em 0;
+  display: flex;
+  flex-direction: row;
+  -moz-column-gap: 0.5em;
+       column-gap: 0.5em;
+  /*grid-template-rows: 1fr;*/
+  /* 縦（行）の設定 */
+  /*grid-template-columns: 43% 1fr; */
+  /* 横（列）の設定 */
+  /*grid-column-gap: 0.5em; */
+  /* グリッド間の横余白 */
+  /* 偶数番目の画像を右側に表示 */
+}
+@media screen and (min-width: 600px) {
+  .p-photo-media-text {
+    margin: 4em 0;
+    /*grid-column-gap: 1em; */
+    /* グリッド間の横余白 */
+    -moz-column-gap: 1em;
+         column-gap: 1em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-media-text {
+    margin: 4em 0;
+    /*grid-column-gap: 2em;*/
+    /* グリッド間の横余白 */
+    -moz-column-gap: 2em;
+         column-gap: 2em;
+  }
+}
+.p-photo-media-text_media {
+  /*grid-column: 1;*/
+  /* グリッド 横 1 */
+  width: 43%;
+}
+.p-photo-media-text_media > img {
+  width: 100%;
+  height: auto;
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /*left: 0;*/
+  /*object-fit: cover;*/
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+.p-photo-media-text_content {
+  /*grid-column: 2;*/
+  /* グリッド 横 2 */
+  width: 54%;
+}
+.p-photo-media-text_content > p {
+  width: 100%;
+}
+.p-photo-media-text:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* タイル型 画像のレイアウト部 の設定 */
+.p-photo-grid {
+  display: grid;
+  /*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/
+  gap: 1.2em;
+  /* グリッド間の縦横余白 */
+}
+@media screen and (min-width: 600px) {
+  .p-photo-grid {
+    /*grid-template-columns: repeat(2, 1fr);*/
+    /* 横 2列*/
+    grid-template-columns: repeat(2, minmax(240px, 1fr));
+    /*横2列 最小幅240px～自動幅 の設定 */
+    /*grid-column-gap: 1em; */
+    /* グリッド間の横余白 */
+    /*grid-row-gap: 1.2em;*/
+    /* グリッド間の横余白 */
+    gap: 1.2em 1em;
+    /* グリッド間の横1.2、縦1.0 余白 */
+    margin-top: 15em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-photo-grid {
+    /*grid-template-columns: repeat(3, 1fr);*/
+    /* 横 3列*/
+    grid-template-columns: repeat(3, minmax(240px, 1fr));
+    /*横3列 最小幅240px～自動幅 の設定 */
+    gap: 1.2em;
+    /* グリッド間の縦横余白 */
+    margin-top: 0;
+  }
+}
+.p-photo-grid > img {
+  max-width: 100%;
+  margin: 0 auto;
+  /*height: auto;*/
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /*left: 0;*/
+  /*object-fit: cover;*/
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+
+/* サーチボックスの設定 */
+.p-search-form {
+  display: block;
+  /* inline-block or block */
+  position: relative;
+  /* 親要素に relativeを設定して、表示位置の基準値を設定する */
+  margin: 3.5em auto;
+  /* 上・下 余白の設定  左右はauto */
+  /* サーチボックスの虫眼鏡の位置設定 */
+}
+@media screen and (min-width: 1025px) {
+  .p-search-form {
+    margin: 1em 2em 0 0;
+    /* 上・右 余白の設定 */
+  }
+}
+.p-search-form::before {
+  content: "";
+  width: 24px;
+  /* 虫眼鏡の横幅 */
+  height: 24px;
+  /* 虫眼鏡の高さ */
+  background-image: url(../images/search-icon.png);
+  /* 虫眼鏡画像のURL */
+  background-repeat: no-repeat;
+  /* 繰り返しなし */
+  background-position: center center;
+  /* 位置は左右・上下とも中央 */
+  background-size: auto auto;
+  /* 縦横自動調整 */
+  position: absolute;
+  /* 表示位置を設定 */
+  top: 1em;
+  /* 上からの位置設定 */
+  left: 1em;
+  /* 左からの位置設定 */
+}
+.p-search-form_searchbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: inline-block;
+  /*inline-blockを設定 */
+  padding: 1px 0 1px 2em;
+  /* 虫眼鏡の設置場所に入力できないように余白を設定 */
+  width: 10em;
+  /* 横幅を 10emに設定 */
+  padding: 0.2em 0.2em 0.2em 2.5em;
+  /* 余白をとって、入力できるエリアとボックスの横と高さを設定。虫眼鏡のところは、2emとって見る */
+}
+@media screen and (min-width: 600px) {
+  .p-search-form_searchbox {
+    width: 20em;
+    /* 横幅を 20emに設定 */
+    /*max-width: 60%;*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-search-form_searchbox {
+    width: 15em;
+    /* 横幅を 15emに設定 */
+    /*padding: 0.2em;*/
+  }
+}
+
+/* サービスメニュー Take Out  Eat In */
+.p-service-menu {
+  display: block;
+  /* サービスメニュー全体をブロックに設定 */
+  padding: 2em;
+  /* 上下左右に余白を */
+  min-height: 64em;
+  /* 最小高さの設定 */
+}
+@media screen and (min-width: 600px) {
+  .p-service-menu {
+    padding: 4em;
+    /* 上下左右に余白を */
+    min-height: 68em;
+    /* 最小高さの設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-service-menu {
+    padding: 9em 8em;
+    /* 上下左右に余白を */
+    min-height: 68em;
+    /* 最小高さの設定 */
+  }
+}
+
+/* サービスメニュー Take Out  Eat In エリアの設定 */
+.p-service-menu_body {
+  display: block;
+  /* ブロックに設定 */
+  width: 100%;
+  /* 横幅 100％に設定 */
+  height: 100%;
+  /* 高さ 100％に設定 */
+  box-sizing: border-box;
+}
+@media screen and (min-width: 600px) {
+  .p-service-menu_body {
+    display: grid;
+    /* グリッドの設定 */
+    grid-template-rows: 1fr;
+    /* 縦 1行 */
+    grid-template-columns: 1fr 1fr;
+    /* 横 2列*/
+    grid-column-gap: 4em;
+    /* グリッド間の横余白 */
+    justify-content: space-around;
+    /* 横 に 両端揃え 左右に余白アリ */
+    justify-items: center;
+    /* 横位置 中央揃え */
+    box-sizing: border-box;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-service-menu_body {
+    display: grid;
+    /* グリッドの設定 --- tabletで設定しているものと同じであれば、引継げるがとりあえず設定しておく*/
+    grid-template-rows: 1fr;
+    /* 縦 1行 */
+    grid-template-columns: 1fr 1fr;
+    /* 横 2列*/
+    grid-column-gap: 6em;
+    /* グリッド間の横余白 */
+    justify-content: space-around;
+    /* 横 に 両端揃え 左右に余白アリ */
+    justify-items: center;
+    /* 横位置 中央揃え */
+    box-sizing: border-box;
+  }
+}
+
+/* サービスメニュー Take Out / Eat In それぞれのエリアの設定 */
+.p-service-menu_inner {
+  display: block;
+  /* ブロック要素にする */
+  background-size: cover;
+  /* 画像の縦横比保持して全体に覆う*/
+  background-position: center center;
+  /* 画像は中央に設定*/
+  width: 100%;
+  /* 横幅一杯に*/
+  min-height: 64em;
+  /* 高さの最小値を設定しておく */
+  padding: 0 1.5em 1.5em 1.5em;
+  /* 内側余白*/
+  margin-bottom: 2em;
+  /* Take OutとEat Inの間の余白の設定 と Eat In の下余白--上余白より少し広くなっている設定 スマホのみ*/
+}
+@media screen and (min-width: 600px) {
+  .p-service-menu_inner {
+    min-height: 68em;
+    /* 高さの最小値を設定しておく */
+    margin-bottom: 0;
+    /* スマホサイズで設定した下余白をzeroに設定 */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-service-menu_inner {
+    min-height: 68em;
+    /* 高さの最小値を設定しておく */
+    margin-bottom: 0;
+    /* スマホサイズで設定した下余白をzeroに設定 */
+  }
+}
+
+/* サービスメニュー Take Out / Eat In タイトルの設定 */
+.p-service-menu_title {
+  display: block;
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  /* Take Out / Eat In の下線の設定 */
+}
+.p-service-menu_title::after {
+  content: "";
+  position: absolute;
+  /* 表示位置を設定 */
+  left: 0;
+  /* 左からの位置*/
+  bottom: -0.1em;
+  /* 線の上下位置*/
+  display: block;
+  /* blockで設定*/
+  width: 1em;
+  /* 線の長さ*/
+  height: 3px;
+  /* 線の太さ*/
+  transform: translateX(0);
+  /* 位置調整*/
+  background-color: #ffffff;
+  /* 線の色*/
+}
+
+/* サービスメニュー Take Out / Eat In の記事エリアの枠設定 */
+.p-service-menu_content {
+  display: flex;
+  /* flex設定 */
+  flex-direction: column;
+  /* 縦並び */
+  justify-content: flex-end;
+  /* 縦並びだと 水平方向のflex-endを使うと下揃えできる */
+  width: 100%;
+  /* 横幅*/
+  min-height: 64em;
+  /* 高さの最小値を設定しておく 上で設定したものと同じ値にしてみる */
+}
+@media screen and (min-width: 600px) {
+  .p-service-menu_content {
+    min-height: 68em;
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-service-menu_content {
+    min-height: 68em;
+  }
+}
+
+/* サービスメニュー Take Out / Eat In の記事の枠（白背景部）の設定 */
+.p-service-menu_content_item {
+  display: block;
+  align-self: flex-end;
+  /* 下揃え --- 多分効いていない */
+  width: 100%;
+  margin-top: 1em;
+  /*padding: 2em 1em;*/
+  /*内余白の設定*/
+  padding: 1em 1em 1.5em 1em;
+  /*内余白の設定* --- XD仕様変更対応*/
+  /* サービスメニュー Take Out / Eat In の記事本文部の設定 --- XD仕様変更により削除 */
+}
+@media screen and (min-width: 600px) {
+  .p-service-menu_content_item {
+    /*padding: 2em 1em;*/
+    /*内余白の設定*/
+    padding: 1em 1em 1.5em 1em;
+    /*内余白の設定* --- XD仕様変更対応*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-service-menu_content_item {
+    margin-top: 2em;
+    /*padding: 2em 2em; */
+    /*内余白の設定*/
+    padding: 1em 2em 1.5em 2em;
+    /*内余白の設定* --- XD仕様変更対応*/
+  }
+}
+.p-service-menu_content_item_dd {
+  padding-top: 0.3em;
+  /*内余白の設定* --- XD仕様変更対応*/
+  /*padding: 1em 0 1.5em 0;*/
+  /*内余白の設定*/
+  /*padding: 1em 0 0.5em 0;*/
+  /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
+  /*padding: 1em 0 0 0;*/
+  /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
+}
+@media screen and (min-width: 600px) {
+  .p-service-menu_content_item_dd {
+    padding-top: 0.3em;
+    /*内余白の設定* --- XD仕様変更対応*/
+    /*padding: 1em 0 2em 0;*/
+    /*内余白の設定*/
+    /*padding: 1em 0 0.5em 0;*/
+    /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
+    /*padding: 1em 0 0 0;*/
+    /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-service-menu_content_item_dd {
+    padding-top: 0.5em;
+    /*内余白の設定* --- XD仕様変更対応*/
+    /*padding: 1em 0 3.5em 0;*/
+    /*内余白の設定*/
+    /*padding: 1em 0 0.5em 0;*/
+    /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
+    /*padding: 1em 0 0 0;*/
+    /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
+  }
+}
+
+/* サイドバー部の設定 */
+.p-sidebar {
+  width: 85%;
+  /* 横幅 スマホは右から85％幅 */
+  height: 100vh;
+  /* 高さ */
+  position: fixed;
+  /* 表示位置 固定*/
+  top: 0;
+  /* 上からの位置 */
+  /*left: 115%;*/
+  /* 左からの位置 右横外側 15％ -- 課題修正指摘あり → left:100%にする*/
+  left: 100%;
+  /* 左からの位置 右横外側 15％ */
+  overflow-y: auto;
+  /* 縦 スクロール */
+  transition: 0.4s;
+  /* 表示時間 0.4秒 */
+  z-index: 2000;
+  /* スマホとタブレットのスモーク表示 */
+  /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+  /*&::after {*/
+  /*content: "";*/
+  /*width: 15%;*/
+  /* 横幅 スマホは左から15％幅 */
+  /*width: 100%;*/
+  /* 横幅 スマホは左から15％幅 */
+  /*height: 100vh;*/
+  /* 高さ */
+  /*background: color.$color-bg--sideber--transparent; */
+  /* 透過度60% */
+  /*position: fixed;*/
+  /* 表示位置を設定 */
+  /*position: absolute;*/
+  /* 表示位置を設定 */
+  /*top: 0;*/
+  /* 上からの位置設定 */
+  /*left: 100%;*/
+  /* 左からの位置設定 */
+  /*transition: .4s;*/
+  /* 表示時間 0.4秒 */
+  /*z-index: 300; */
+  /*@include mixin.mq(tablet) {*/
+  /*width: 55%;*/
+  /* 横幅 スマホは左から55％幅 */
+  /*width: 100%; */
+  /* 横幅 スマホは左から55％幅 */
+  /*}*/
+  /*@include mixin.mq(pc) {*/
+  /*display: none;*/
+  /* PCは非表示 */
+  /*width: 0;*/
+  /* 横幅 PCは非表示のため 幅0 */
+  /*height: 0; */
+  /* 高さ PCは非表示のため 高さ0 */
+  /*} */
+  /*}*/
+  /* サイドバーを表示 */
+}
+@media screen and (min-width: 600px) {
+  .p-sidebar {
+    width: 45%;
+    /* 横幅 タブレットは右から45％幅 */
+    height: 100vh;
+    /* 高さ */
+    left: 155%;
+    /* 左からの位置 右横外側 55％ */
+  }
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar {
+    width: 100%;
+    /* 横幅 PCは100％幅 */
+    height: 100%;
+    /* 高さ PCは100％高さ */
+    position: static;
+    /* 表示位置 staticに*/
+    overflow: hidden;
+    /* スクロール 非表示*/
+    z-index: auto;
+    /* 表示優先順位 autoに設定*/
+  }
+}
+.p-sidebar.is-open {
+  top: 0;
+  /* 上からの位置設定 */
+  left: 15%;
+  /* 左からの位置設定 スマホは15%*/
+  /*z-index: 2000;*/
+  /* 上で設定しているのではずす*/
+  /*&::after {*/
+  /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+  /*content: "";*/
+  /*top: 0; */
+  /* 上からの位置設定 */
+  /*left: 0;*/
+  /* 左からの位置設定 左端*/
+  /*}*/
+}
+@media screen and (min-width: 600px) {
+  .p-sidebar.is-open {
+    left: 55%;
+    /* 左からの位置設定 タブレットは55%*/
+  }
+}
+
+/* サイドバーを表示した時、サイドバー以外はスクロールしない設定 */
+/*→ body.scssに移動*/
+/*body.is-open {*/
+/*position: fixed;*/
+/* 表示位置を固定*/
+/*}*/
+/* サイドバー部 PC画面の時に「MENU」の表示設定 */
+.p-sidebar-menu {
+  display: none;
+  /* スマホ・タブレットは非表示 */
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar-menu {
+    display: inline-block;
+    /* inline-blockにする */
+    margin-top: 2.5em;
+    /* 上余白設定 */
+    margin-left: 1.5em;
+    /* 左余白設定 */
+  }
+}
+
+/* サイドバー部の カテゴリーエリア全体枠の設定 */
+.p-sidebar-category_body {
+  display: block;
+  position: relative;
+  /* 表示位置の基準値を設定する */
+  padding-top: 6em;
+  /* 上余白設定  */
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar-category_body {
+    margin-top: 0;
+    /* 上余白設定 */
+    padding-top: 0;
+    /* 上余白設定 */
+  }
+}
+
+/* サイドバー部の カテゴリーエリア内側の設定 */
+.p-sidebar-category_inner {
+  display: flex;
+  flex-direction: column;
+  /* 縦並び */
+  padding: 0 2em 2em 2em;
+  /* 上下左右余白 */
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar-category_inner {
+    margin-top: 0;
+    /* 上余白設定 */
+  }
+}
+.p-sidebar-category_inner > li {
+  padding-top: 2.5em;
+}
+
+/* サイドバー部の カテゴリーの設定 */
+.p-sidebar-category {
+  display: inline-block;
+  padding-top: 1em;
+}
+@media screen and (min-width: 1025px) {
+  .p-sidebar-category {
+    padding-top: 1em;
+  }
+}
+
+/* サイドバー部の カテゴリーアイテムエリアの設定 */
+.p-sidebar-category-item_body {
+  display: flex;
+  flex-direction: column;
+  /*margin-top: 1em;*/
+  padding-top: 1em;
+}
+.p-sidebar-category-item_body > li {
+  display: inline-block;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+}
+
+/* サイドバー部の カテゴリー アイテムの設定 */
+.p-sidebar-category-item {
+  display: inline-block;
+  padding: 0.5em 1em;
+  white-space: nowrap;
+}
+
+/* WP-PageNavi plugin の設定*/
+.wp-pagenavi {
+  display: none;
+}
+@media screen and (min-width: 600px) {
+  .wp-pagenavi {
+    display: block;
+    clear: both;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #707070;
+  }
+  .wp-pagenavi a, .wp-pagenavi span {
+    text-decoration: none;
+    border: 1px solid #707070;
+    padding: 0.5em 0.8em;
+    margin: 0.5em;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+  }
+  .wp-pagenavi a:hover, .wp-pagenavi span.current {
+    background-color: #3c2b1c;
+    color: #ffffff;
+  }
+  .wp-pagenavi span.current {
+    font-weight: bold;
+    background-color: #3c2b1c;
+    color: #ffffff;
+  }
+  .wp-pagenavi span.pages, .wp-pagenavi .previouspostslink, .wp-pagenavi .nextpostslink {
+    border: none;
+  }
+}
+/*# sourceMappingURL=hamburger.css.map */

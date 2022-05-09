@@ -1,0 +1,101 @@
+@use "../foundation/mixin";
+@use "../foundation/palette";
+@use "../foundation/color";
+@use "../foundation/variable";
+
+/* カラー 背景色 文字色 */
+.has-light-brown-background-color {
+	background-color: palette.$palette-fawn;
+}
+
+.has-light-brown-color {
+	color: palette.$palette-fawn;
+}
+
+.has-dark-brown-background-color {
+	background-color: palette.$palette-dark-brown;
+}
+
+.has-dark-brown-color {
+	color: palette.$palette-dark-brown;
+}
+
+.has-black-brown-background-color {
+	background-color: palette.$palette-black-brown;
+}
+
+.has-black-brown-color {
+	color: palette.$palette-black-brown;
+}
+
+.has-sand-background-color {
+	background-color: palette.$palette-sand;
+}
+
+.has-sand-color {
+	color: palette.$palette-sand;
+}
+
+.has-gray-background-color {
+	background-color: palette.$palette-gray;
+}
+
+.has-gray-color {
+	color: palette.$palette-gray;
+}
+
+.has-gemini-gray-background-color {
+	background-color: palette.$palette-gemini-gray;
+}
+
+.has-gemini-gray-color {
+	color: palette.$palette-gemini-gray;
+}
+
+.has-black-background-color {
+	background-color: palette.$palette-black;
+}
+
+.has-black-color {
+	color: palette.$palette-black;
+}
+
+.has-white-background-color {
+	background-color: palette.$palette-white;
+}
+
+.has-white-color {
+	color: palette.$palette-white;
+}
+
+.has-ivory-background-color {
+	background-color: palette.$palette-ivory;
+}
+
+.has-ivory-color {
+	color: palette.$palette-ivory;
+}
+
+.has-whitesmoke-background-color {
+	background-color: palette.$palette-whitesmoke;
+}
+
+.has-whitesmoke-color {
+	color: palette.$palette-whitesmoke;
+}
+
+.has-seashell-background-color {
+	background-color: palette.$palette-seashell;
+}
+
+.has-seashell-color {
+	color: palette.$palette-seashell;
+}
+
+.has-blue-background-color {
+	background-color: palette.$palette-blue;
+}
+
+.has-blue-color {
+	color: palette.$palette-blue;
+}

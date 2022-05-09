@@ -1,0 +1,69 @@
+@use "../foundation/mixin";
+@use "../foundation/color";
+@use "../foundation/variable";
+
+:root {
+	font-size: 62.5%;
+}
+
+/* 共通 */
+*, *::before,*::after {
+    box-sizing: border-box;
+}
+
+/*html {*/
+	/*font-size: 62.5%;*/
+/*}*/
+
+
+body {
+	font-family: variable.$font-family;
+    line-height: variable.$line-height--normal;
+}
+
+main {
+    display: block;
+}
+
+/* aタグ リンクの初期設定 */
+a {
+    text-decoration: none;
+
+    &:link {
+        color: inherit;
+    }
+
+    &:visited {
+        color: inherit;
+    }
+
+    &:hover {
+        color: inherit;
+    }
+
+    &:focus {
+        color: inherit;
+        outline: 0;
+    }
+
+    &:active {
+        color: inherit;
+    }
+}
+
+/* iPhone 丸くなるのを解除 */
+input[type="submit"] ,
+input[type="search"]{
+    -webkit-appearance: none;
+}
+
+/* buttonタグ リンクの初期設定 */
+/*button {
+    border: none;  */     /* 枠線なし*/
+    /*background-color: transparent; *//*背景色を無効にする*/
+    /*font-size: 0;*/
+/*}*/
+
+strong {
+    font-weight: variable.$font-weight--bold;
+}

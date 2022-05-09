@@ -1,0 +1,14 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* サーチボックス の設定 */
+.c-searchform-searchbox {
+    border: 1px solid color.$color-border--searchbox; /* ボックスの枠線の色と線の種類と線の太さを設定 */
+    border-radius: variable.$radius--middle;          /* ボックスの角丸を設定 */
+    background-color: color.$color-bg--serachbox;     /* ボックスの背景色を設定 */
+    box-sizing: border-box;
+    line-height: variable.$line-height--wide;         /* 文字の高さを設定 */
+    font-size: variable.$font-size--base;             /* 文字の大きさを設定 */
+}
+

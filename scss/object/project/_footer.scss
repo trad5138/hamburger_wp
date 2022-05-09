@@ -1,0 +1,27 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+
+/* フッター部 の メニュー 表示 */
+.p-footer-nav {
+    display: flex;  /* 横並び */
+    justify-content: center;  /* 中央並び */
+    align-items: center;    /* 上下中央並び */
+    padding-top: 40px;  /* 上余白 */
+
+    & > li {
+        padding: 0 15px;     /* 左右余白 */
+        text-align: center;    /* 文字 中央揃え */
+
+        & > a {
+            color: color.$color-font--footer--nav;  /* リンクの文字色 */
+        }
+    }
+
+    /* メニューが複数並んだ時に メニューの間に 縦棒 を表示（左側）、最初のメニューには表示しない */
+    & > li + li {
+        border-left: 2px solid color.$color-border--footer-nav; /* 縦棒の横幅、実線、色 */
+        line-height: variable.$line-height--small; /* 縦棒の高さ */
+    }
+}

@@ -1,0 +1,49 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* サーチボックスの設定 */
+.p-search-form {
+    display: block;  /* inline-block or block */
+    position: relative;     /* 親要素に relativeを設定して、表示位置の基準値を設定する */
+    margin: 3.5em auto;     /* 上・下 余白の設定  左右はauto */
+
+    @include mixin.mq(pc) {
+        margin: 1em 2em 0 0;    /* 上・右 余白の設定 */
+    }
+
+    /* サーチボックスの虫眼鏡の位置設定 */
+    &::before {
+        content: "";
+        width: 24px;    /* 虫眼鏡の横幅 */
+        height: 24px;   /* 虫眼鏡の高さ */
+        background-image: url(../images/search-icon.png) ;  /* 虫眼鏡画像のURL */
+        background-repeat: no-repeat;  /* 繰り返しなし */
+        background-position: center center;  /* 位置は左右・上下とも中央 */
+        background-size: auto auto;   /* 縦横自動調整 */
+        position: absolute; /* 表示位置を設定 */
+        top: 1em;       /* 上からの位置設定 */
+        left: 1em;      /* 左からの位置設定 */
+    }
+
+    &_searchbox {
+        appearance: none; 
+        display: inline-block;  /*inline-blockを設定 */
+        padding: 1px 0 1px 2em; /* 虫眼鏡の設置場所に入力できないように余白を設定 */
+        width: 10em;   /* 横幅を 10emに設定 */
+        padding: 0.2em 0.2em 0.2em 2.5em;     /* 余白をとって、入力できるエリアとボックスの横と高さを設定。虫眼鏡のところは、2emとって見る */
+
+        @include mixin.mq(tablet) {
+            width: 20em;        /* 横幅を 20emに設定 */
+            /*max-width: 60%;*/
+        }
+    
+        @include mixin.mq(pc) {
+            width: 15em;        /* 横幅を 15emに設定 */
+            /*padding: 0.2em;*/
+        }
+    }
+}
+
+
+

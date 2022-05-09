@@ -1,0 +1,16 @@
+/* mixin */
+/* ブレイクポイントの設定 */
+/* マップの定義 */
+$breakpoint: (
+  'sp': 'screen and (min-width: 320px)',
+  'tablet': 'screen and (min-width: 600px)',
+  'pc': 'screen and (min-width: 1025px)',
+) !default;
+
+/* mixinの定義 */
+@mixin mq($bp) {
+    @media #{map-get($breakpoint, $bp)} {
+      @content;
+    }
+}
+  

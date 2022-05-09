@@ -1,0 +1,12 @@
+@use "../foundation/mixin";
+@use "../foundation/variable";
+
+.l-main {
+	width: 100%;
+	//height: 100%;
+
+    @include mixin.mq(pc) {
+		grid-row: 2/3;     /* グリッド 縦 2-3 */
+		grid-column: 1/2;  /* グリッド 横 1-2 */
+	}
+}

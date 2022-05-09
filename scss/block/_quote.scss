@@ -1,0 +1,52 @@
+@use "../foundation/mixin";
+@use "../foundation/palette";
+@use "../foundation/color";
+@use "../foundation/variable";
+
+/* 引用エリアの設定*/
+.wp-block-quote {
+	overflow-wrap: break-word;
+	border: none;
+	padding: 1.5em 1.3em;
+	background-color: color.$color-bg--quote;
+	font-size: variable.$font-size--single-text--sp;
+    line-height: variable.$line-height--normal;
+
+    @include mixin.mq(tablet) {
+		padding: 3.5em 3em;
+        font-size: variable.$font-size--single-text--tablet;
+    }
+
+    @include mixin.mq(pc) {
+		padding: 3.5em 3em;
+        font-size: variable.$font-size--single-text--pc;
+    }    
+
+	& cite {
+		margin-top: 1.3em;
+		font-size: variable.$font-size--single-text--sp;
+		line-height: variable.$line-height--normal;
+		display: inline-block;
+	
+		@include mixin.mq(tablet) {
+				margin-top: 3em;
+				font-size: variable.$font-size--single-text--tablet;
+		}
+		
+		@include mixin.mq(pc) {
+				margin-top: 3em;
+				font-size: variable.$font-size--single-text--pc;        
+		} 
+		
+		& > a {
+			text-decoration: underline;
+			color: color.$color-font--link;
+		}
+	}
+
+	//& > cite a {
+    //    text-decoration: underline;
+    //    color: color.$color-font--link;
+    //}
+}
+

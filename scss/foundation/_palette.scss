@@ -1,0 +1,22 @@
+/* Color Palette */
+/* color 色の設定*/
+$palette-white: #ffffff;
+$palette-ivory: #fffdfa;
+$palette-seashell: #fff7ef;
+$palette-whitesmoke: #f5f5f5;
+$palette-light-sand: #f1edea;
+$palette-sand: #f2ede9; 
+$palette-sand-gradient: #e6e0dc; /*検索ボタンのグラデーションで使用*/
+$palette-gray: #787878;
+$palette-gemini-gray: #707070;
+$palette-fawn: #9d8670;
+$palette-dark-brown:#3c2a10;
+$palette-black-brown: #3c2b1c;
+$palette-blue: #4a6c9b;
+$palette-black: #000000;
+
+/* color 透過色の設定*/
+$palette-transparent-white: rgba(255,255,255,0.75);
+$palette-transparent-black-light: rgba(0,0,0,0.3);
+$palette-transparent-black-middle: rgba(0,0,0,0.4);
+$palette-transparent-black-dark: rgba(0,0,0,0.6);

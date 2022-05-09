@@ -1,0 +1,122 @@
+@use "../foundation/mixin";
+@use "../foundation/palette";
+@use "../foundation/color";
+@use "../foundation/variable";
+
+/*見出しフォントサイズ*/
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	clear: both;
+	font-family: variable.$font-family;
+	font-weight: variable.$font-weight--normal;
+
+	strong {
+		font-weight: variable.$font-weight--bold;
+	}
+}
+
+h1,
+.h1 {
+	font-size: variable.$font-size--single-h1--sp;
+	font-weight: variable.$font-weight--bold;
+	letter-spacing: variable.$letter-spacing--h1;
+	line-height: variable.$line-height--h1;
+
+	@include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h1--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h1--pc;
+    }    
+}
+
+h2,
+.h2 {
+	font-size: variable.$font-size--single-h2--sp;
+	font-weight: variable.$font-weight--bold;
+	letter-spacing: variable.$letter-spacing--h2;
+	line-height: variable.$line-height--h2;
+
+	@include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h2--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h2--pc;
+    }   
+}
+
+h3,
+.h3 {
+	font-size: variable.$font-size--single-h3--sp;
+	font-weight: variable.$font-weight--bold;
+	letter-spacing: variable.$letter-spacing--h3;
+	line-height: variable.$line-height--h3;
+
+	@include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h3--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h3--pc;
+    }    
+}
+
+h4,
+.h4 {
+	font-size: variable.$font-size--single-h4--sp;
+	font-weight: variable.$font-weight--bold;
+	letter-spacing: variable.$letter-spacing--h4;
+	line-height: variable.$line-height--h4;
+
+	@include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h4--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h4--pc;
+    }   
+}
+
+h5,
+.h5 {
+	font-size: variable.$font-size--single-h5--sp;
+	font-weight: variable.$font-weight--bold;
+	letter-spacing: variable.$letter-spacing--h5;
+	line-height: variable.$line-height--h5;
+
+	@include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h5--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h5--pc;
+    }    
+}
+
+h6,
+.h6 {
+	font-size: variable.$font-size--single-h6--pc;
+	font-weight: variable.$font-weight--bold;
+	letter-spacing: variable.$letter-spacing--h6;
+	line-height: variable.$line-height--h5;
+
+	@include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h6--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h6--pc;
+    }  
+}

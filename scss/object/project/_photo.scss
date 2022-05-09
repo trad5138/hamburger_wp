@@ -1,0 +1,175 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+.p-photo-block {
+    display: block;
+    margin: 2em 0;
+
+    @include mixin.mq(tablet) {
+        margin: 4em 0;
+    }
+
+    @include mixin.mq(pc) {
+        margin: 4em 0;        
+    } 
+
+    /* 横幅100%の画像部の設定 */
+    &-image {
+        width: 100%;
+        height: auto;                    /* 高さ */
+        position: relative;             /* 表示位置の基準値を設定する */
+        box-sizing: border-box;
+        padding-top: 37%;
+    
+        @include mixin.mq(tablet) {
+            padding-top: 37%;             /* 縦横比率を設定 横長に設定 */
+        }
+    
+        @include mixin.mq(pc) {
+            padding-top: 37%;             /* 縦横比率を設定 横長に設定 */
+        }
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            position: absolute;     /* 表示位置を設定 */
+            top: 0;
+            left: 0;
+            object-fit: cover;
+            object-position: left bottom;            
+
+            @include mixin.mq(tablet) {
+                position: absolute;     /* 表示位置を設定 */
+                top: 0;
+                left: 0;
+                object-position: left bottom; 
+            }
+
+            @include mixin.mq(pc) {
+                position: absolute;     /* 表示位置を設定 */
+                top: 0;
+                left: 0;
+                object-position: left bottom; 
+            } 
+        }
+    }
+
+    /* 中段の中央位置にある画像の設定 */
+    &-image_middle {
+        width: 80%;
+        /*position: relative;*/           /* 表示位置の基準値を設定する */
+        box-sizing: border-box;
+        /*padding-top: 62%;*/
+        margin: 0 auto;
+    
+        @include mixin.mq(tablet) {
+            width: 80%;
+            /*padding-top: 62%;*/            /* 縦横比率を設定 横長に設定 */
+        }
+    
+        @include mixin.mq(pc) {
+            width: 43%;
+            /*padding-top: 62%;*/            /* 縦横比率を設定 横長に設定 -- これを入れると下余白ができる */
+        }
+
+        & > img {
+            width: 100%;
+            height: auto;
+            /*position: absolute;*/     /* 表示位置を設定 */
+            /*top: 0;*/
+            /*left: 0;*/
+            object-fit: cover;
+            object-position: center bottom;
+        }
+    }
+}
+
+/* 写真とテキスト エリアの設定 */
+.p-photo-media-text {
+    margin: 2em 0;
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.5em;
+    /*grid-template-rows: 1fr;*/  /* 縦（行）の設定 *///グリッドは上手くいかなかった
+    /*grid-template-columns: 43% 1fr; */      /* 横（列）の設定 */
+    /*grid-column-gap: 0.5em; */           /* グリッド間の横余白 */
+
+    @include mixin.mq(tablet) {
+        margin: 4em 0;
+        /*grid-column-gap: 1em; */           /* グリッド間の横余白 */
+        column-gap: 1em;
+    }
+
+    @include mixin.mq(pc) {
+        margin: 4em 0;
+        /*grid-column-gap: 2em;*/            /* グリッド間の横余白 */
+        column-gap: 2em;
+    }
+    
+    &_media {
+        /*grid-column: 1;*/  /* グリッド 横 1 */  
+        width: 43%;    
+
+        & > img {
+            width: 100%;
+            height: auto;
+            /*position: absolute;*/     /* 表示位置を設定 */
+            /*top: 0;*/
+            /*left: 0;*/
+            /*object-fit: cover;*/
+            object-fit: contain;
+            object-position: left bottom;  
+        }
+    }
+
+    &_content {
+        /*grid-column: 2;*/  /* グリッド 横 2 */
+        width: 54%;
+
+        & > p {
+            width: 100%;
+        }
+    }
+
+    /* 偶数番目の画像を右側に表示 */
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+/* タイル型 画像のレイアウト部 の設定 */
+.p-photo-grid {
+    display: grid;
+    /*grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));*/ //この要素でスマホ～pcまで対応できると思ったが、pcで4列になってしまった。minを大きするとタブレットで2列にならない
+    gap: 1.2em;                 /* グリッド間の縦横余白 */
+
+    @include mixin.mq(tablet) {
+        /*grid-template-columns: repeat(2, 1fr);*/  /* 横 2列*/
+        grid-template-columns: repeat(2, minmax(240px, 1fr));  /*横2列 最小幅240px～自動幅 の設定 */
+        /*grid-column-gap: 1em; */          /* グリッド間の横余白 */
+        /*grid-row-gap: 1.2em;*/            /* グリッド間の横余白 */
+        gap: 1.2em 1em;                     /* グリッド間の横1.2、縦1.0 余白 */
+        margin-top: 15em;
+    }
+
+    @include mixin.mq(pc) {
+        /*grid-template-columns: repeat(3, 1fr);*/  /* 横 3列*/
+        grid-template-columns: repeat(3, minmax(240px, 1fr));   /*横3列 最小幅240px～自動幅 の設定 */
+        gap: 1.2em;            /* グリッド間の縦横余白 */
+        margin-top: 0;
+    }    
+
+    & > img {
+        max-width: 100%;
+        margin: 0 auto;
+        /*height: auto;*/
+        /*position: absolute;*/     /* 表示位置を設定 */
+        /*top: 0;*/
+        /*left: 0;*/
+        /*object-fit: cover;*/
+        object-fit: cover;
+        object-position: left bottom;  
+    }
+}
+

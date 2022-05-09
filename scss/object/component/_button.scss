@@ -1,0 +1,107 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* スマホ・タブレット画面のヘッダー部の「MENU」ボタンtag初期設定解除 */
+.c-button-menu {
+    display: inline-block;
+    border: none;
+    background-color: transparent;
+}
+
+/* スマホ・タブレット画面のサイドバー部の「×」ボタンtag初期設定解除 */
+.c-button-close {
+    display: inline-block;
+    border: none;                    /* 枠線なし*/
+    background-color: transparent;   /*背景色を無効にする*/
+    font-size: 0;                    /*閉じるボタンのテキストをfont-size：0で消す*/
+}
+
+/* 検索ボタンの設定 */
+.c-button-search {
+    display: inline-block;                          /* inline-blockに設定 */
+    border: 1px solid color.$color-border--button;  /* ボタンの枠線の設定 */
+    border-radius: variable.$radius--middle;        /* ボタンの角丸の設定 */
+    padding: 0.2em 1.5em;                           /* ボタンの縦横の大きさの設定 */
+    box-sizing: border-box;
+    text-align: center;                             /* 文字を中央揃え */
+    line-height: variable.$line-height--wide;       /* 文字の高さ */
+    margin-left: 0.5em;                             /* 検索ボックスと検索ボタンの余白 */
+    background-image: linear-gradient(color.$color-bg--button--search, color.$color-bg--button--search-gradient); /* グラデーション設定 */
+    box-shadow: inset 2px 2px 2px color.$color-bg--button--search; /* 内側 横2px 縦2px ぼかし2px 影の広さなし */
+    cursor: pointer;  /*要素にマウスポインタ―が乗ったとき*/
+
+    @include mixin.mq(tablet) {
+        padding: 0.2em 3em;     /* ボタンの縦横の大きさの設定 */
+    }
+
+    @include mixin.mq(pc) {
+        padding: 0.2em 2em;     /* ボタンの縦横の大きさの設定 */
+    }   
+}
+
+/* archive search card 詳しく見るボタンの設定 */
+.c-button-card {
+    display: inline-block;                          /* inline-blockに設定 */
+    border: 1px solid color.$color-border--button--card;  /* ボタンの枠線の設定 */
+    border-radius: 100vh;        /* ボタンの角丸の設定 */
+    padding: 0.3em 2.5em;                           /* ボタンの縦横の大きさの設定 */
+    box-sizing: border-box;
+    text-align: center;                             /* 文字を中央揃え */
+    line-height: variable.$line-height--wide;       /* 文字の高さ */
+    /*margin: 2em auto; */                            /* 検索ボックスと検索ボタンの余白 */
+    background-color: color.$color-bg--button--learn-more; /* グラデーション設定 */
+    cursor: pointer;  /*要素にマウスポインタ―が乗ったとき*/
+
+    @include mixin.mq(tablet) {
+        padding: 0.5em 2.5em;     /* ボタンの縦横の大きさの設定 */
+    }
+
+    @include mixin.mq(pc) {
+        padding: 1em 5em;     /* ボタンの縦横の大きさの設定 */
+    }   
+}
+
+/* archive search ホームに戻るボタンの設定 */
+.c-button-home {
+    display: inline-block;                          /* inline-blockに設定 */
+    border: 1px solid color.$color-border--button--card;  /* ボタンの枠線の設定 */
+    border-radius: 100vh;        /* ボタンの角丸の設定 */
+    padding: 0.3em 2.5em;                           /* ボタンの縦横の大きさの設定 */
+    box-sizing: border-box;
+    text-align: center;                             /* 文字を中央揃え */
+    line-height: variable.$line-height--wide;       /* 文字の高さ */
+    /*margin: 2em auto; */                            /* 検索ボックスと検索ボタンの余白 */
+    background-color: color.$color-bg--button--home; /* グラデーション設定 */
+    cursor: pointer;  /*要素にマウスポインタ―が乗ったとき*/
+
+    @include mixin.mq(tablet) {
+        padding: 0.5em 2.5em;     /* ボタンの縦横の大きさの設定 */
+    }
+
+    @include mixin.mq(pc) {
+        padding: 1em 5em;     /* ボタンの縦横の大きさの設定 */
+    }   
+}
+
+/* single page ボタンの設定 */
+.c-button-si {
+    display: inline-block;                          /* inline-blockに設定 */
+    border: 1px solid color.$color-border--button;  /* ボタンの枠線の設定 */
+    border-radius: variable.$radius--x-large;        /* ボタンの角丸の設定 */
+    padding: 1.7em 1.5em;                           /* ボタンの縦横の大きさの設定 */
+    box-sizing: border-box;
+    text-align: center;                             /* 文字を中央揃え */
+    background-image: linear-gradient(color.$color-bg--button--search, color.$color-bg--button--search-gradient); /* グラデーション設定 */
+    box-shadow: inset 2px 2px 2px color.$color-bg--button--search; /* 内側 横2px 縦2px ぼかし2px 影の広さなし */
+    cursor: pointer;  /*要素にマウスポインタ―が乗ったとき*/
+    width: 100%;
+
+    @include mixin.mq(tablet) {
+        padding: 2.4em 2em;     /* ボタンの縦横の大きさの設定 */
+    }
+
+    @include mixin.mq(pc) {
+        padding: 2.4em 2em;     /* ボタンの縦横の大きさの設定 */
+    }   
+}

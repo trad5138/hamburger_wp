@@ -1,0 +1,26 @@
+@use "../foundation/mixin";
+@use "../foundation/palette";
+@use "../foundation/color";
+@use "../foundation/variable";
+
+/* リストの設定*/
+
+
+ol {
+	font-family: variable.$font-family--jp;
+	margin-left: 3em;
+    list-style-type: decimal;
+    list-style-position: inside;    
+
+    ol {
+        margin-left: 1em;
+    }
+}
+
+ul {
+    margin-left: 3em;
+    ul {
+        margin-left: 1em;
+    }
+}
+

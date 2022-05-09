@@ -1,0 +1,111 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* ページネーション部の設定*/
+.p-pagination {
+    display: block;
+    width: 100%;
+    margin: 5.5em 0 1em 0;
+
+    @include mixin.mq(tablet) {
+        //margin: 5em 0 2em 0;
+        margin: 5em 0 5em 0;
+    }
+
+    @include mixin.mq(pc) {
+        //margin: 8em 0 4em 0;
+        margin: 8em 0 8em 0;
+    }
+}
+
+.p-pagination_sp {
+    //display: flex;
+    //justify-content: space-between;
+    padding: 0;
+    width: 100%;
+
+    @include mixin.mq(tablet) {
+        display: none;
+    }
+
+    @include mixin.mq(pc) {
+        display: none;
+    }
+}
+
+.p-pagination-float-right {
+    float: right;
+    margin: 0;
+}
+
+.p-pagination-float-left {
+    float: left;
+    margin: 0;
+}
+
+.p-pagination-float-clear {
+    clear: both;
+}
+
+
+.p-pagination_tbpc {
+    display: none;
+   
+    @include mixin.mq(tablet) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: 1.5em;
+        /*gap: 0.5em;*/
+        margin: 0;
+        padding: 0;
+    }
+
+    /*@include mixin.mq(pc) {
+        display: inline;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }*/
+}
+
+.p-pagination_tbpc-pagenum {
+    display: inline-block;
+    width: auto;
+    height: 34px;
+    white-space: nowrap;
+    padding: 0.5em 0;
+}
+
+.p-pagination_tbpc-prev,
+.p-pagination_tbpc-next {
+    display: inline-block;
+    width: auto;
+    height: 34px;
+    text-align: center;
+    white-space: nowrap;
+    padding: 0.5em 0;
+}
+
+.p-pagination_tbpc-item {
+    display: inline-block;
+    background-color: color.$color-bg--pagination;
+    width: 34px;
+    height: 34px;
+    text-align: center;
+    border: 1px solid color.$color-border--pagination;
+    box-sizing: border-box;
+
+    & > a {
+        display: block; 
+        width: 100%;       
+        height: 100%;
+        padding: 0.5em;
+    }
+
+    &.is-this {
+        color: color.$color-font--pagination--this;
+        background-color: color.$color-bg--pagination--this;
+    }
+}

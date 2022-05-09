@@ -1,0 +1,59 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* single page リストタグ部 の設定 */
+.p-list {
+    margin: 2em 0;
+
+    @include mixin.mq(tablet) {
+        margin: 3em 0;
+        padding: 0 3em;
+    }
+
+    @include mixin.mq(pc) {
+        margin: 3em 0; 
+        padding: 0em 3em;    
+    } 
+
+    &__ol {
+        counter-reset: li;                  /*olのリストの数字をリセット*/
+        margin-top: 1.2em;
+
+        & > li {
+            list-style: none;               /*元のスタイルを非表示にする*/
+    
+            &::before {
+                counter-increment: li;      /*リストの数字を1つ進める*/
+                content: counter(li) ".";   /*リストを連番にする 連番の後に”.”を付ける */
+                /*margin-right: 1.5em;*/    /*要素が重なるから右へ移動*/
+                line-height: 1.6;           /*文字が重なるのを防止*/
+            }
+        }
+    
+        //& > li 
+            //list-style-type: decimal;     //リストのスタイルを数字に設定
+            //list-style-position: inside;   //リストの数字の位置は内側に設定       
+        //}
+    }
+
+    /* ulタグの上外余白 */
+    &__ul {
+        margin-top: 1.2em;
+    }
+
+    /* 上外余白 */
+    &_margin-top {
+        margin-top: 3.5em;
+    }
+
+    /* 左外余白 */
+    &_margin-left {
+        margin-left: 1em;
+    }
+
+}
+
+
+
+

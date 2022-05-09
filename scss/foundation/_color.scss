@@ -1,0 +1,77 @@
+/* 文字・背景色の設定 */
+
+@use "../foundation/palette";
+
+/*文字カラー*/
+$color-font--header--title: palette.$palette-gemini-gray;
+$color-font--main-visual--title: palette.$palette-white;
+$color-font--search--button: palette.$palette-gemini-gray;
+$color-font--search--box: palette.$palette-gemini-gray;
+$color-font--search--box--before: palette.$palette-gemini-gray;
+$color-font--service-menu--title: palette.$palette-white;
+$color-font--service-menu--subtitle:palette.$palette-dark-brown;
+$color-font--service-menu--text: palette.$palette-dark-brown;
+$color-font--map--title: palette.$palette-white;
+$color-font--map--text: palette.$palette-white;
+$color-font--footer--nav: palette.$palette-white;
+$color-font--footer--text: palette.$palette-white;
+$color-font--sidebar--menu: palette.$palette-gemini-gray;
+$color-font--sidebar--catgory: palette.$palette-gemini-gray;
+$color-font--sidebar--item: palette.$palette-gemini-gray;
+$color-font--card--title: palette.$palette-white;
+$color-font--card--subtitle: palette.$palette-white;
+$color-font--card--text: palette.$palette-white;
+$color-font--card--button: palette.$palette-gemini-gray;
+$color-font--pagination: palette.$palette-gemini-gray;
+$color-font--pagination--this: palette.$palette-white;
+$color-font--text: palette.$palette-dark-brown;
+$color-font--link: palette.$palette-blue;
+$color-font--text--white: palette.$palette-white;
+
+/*背景カラー*/
+$color-bg--header: palette.$palette-seashell;
+$color-bg--sidebar: palette.$palette-sand;
+$color-bg--body: palette.$palette-ivory;
+$color-bg--footer: palette.$palette-fawn;
+/*$color-bg--service-menu_item: palette.$palette-white;*/
+$color-bg--service-menu_body: palette.$palette-ivory;
+/*$color-bg--map--cover: palette.$palette-white;*/
+$color-bg--map--text: palette.$palette-black;
+$color-bg--content: palette.$palette-ivory;
+$color-bg--card: palette.$palette-black-brown;
+$color-bg--pagination: palette.$palette-white;
+$color-bg--pagination--this: palette.$palette-black-brown;
+
+/*背景 カラー 透過*/
+$color-bg--service-menu-item: palette.$palette-transparent-white;
+$color-bg--map--cover--light: palette.$palette-transparent-black-light;
+$color-bg--map--cover--dark: palette.$palette-transparent-black-middle;
+$color-bg--sideber--transparent: palette.$palette-transparent-black-dark;
+
+/*引用タグ背景カラー*/
+$color-bg--quote: palette.$palette-whitesmoke;
+
+/*HTMLタグ背景カラー*/
+$color-bg--html: palette.$palette-whitesmoke;
+
+/*ボタン背景カラー*/
+$color-bg--button--search: palette.$palette-sand;
+$color-bg--button--search-gradient: palette.$palette-sand-gradient;
+$color-bg--button--learn-more: palette.$palette-white;
+$color-bg--button--cross: palette.$palette-gemini-gray;
+$color-bg--button--home: palette.$palette-black-brown;
+
+/*serach box 背景 カラー*/
+$color-bg--serachbox: palette.$palette-white;
+
+/*ボーダー（線）カラー*/
+$color-border--button: palette.$palette-gemini-gray;
+$color-border--searchbox: palette.$palette-gemini-gray;
+$color-border--footer-nav: palette.$palette-white;
+$color-border--button--card: palette.$palette-white;
+$color-border--pagination: palette.$palette-gemini-gray;
+
+/*テーブルカラー*/
+$color-table--body: palette.$palette-white;
+$color-table--line: palette.$palette-gemini-gray;
+

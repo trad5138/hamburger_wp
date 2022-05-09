@@ -1,0 +1,218 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* contents エリア */
+.p-content {
+    display: block;
+    padding: 2em;                /* 内余白の設定 */
+
+    @include mixin.mq(tablet) {
+        /*padding: 2em 4em;*/        /* 内余白の設定 */
+        padding: 2em clamp(2em, 3.9vw, 4em);    /* 内余白-横余白伸縮の設定 */
+    }
+
+    @include mixin.mq(pc) {
+        /*padding: 5em 8em;*/        /* 内余白の設定 */
+        padding: 5em clamp(4em, 4.16vw, 8em);   /* 内余白-横余白伸縮の設定 */
+        
+    }       
+}
+
+/* contents テキストエリア */
+.p-content-text {
+    padding: 1em 0 0 0;            /*内余白の設定*/
+
+    @include mixin.mq(tablet) {
+        padding: 1em 0;
+    }
+
+    @include mixin.mq(pc) {
+        padding: 1em 0 2em 0;
+    }  
+}
+
+/* contents テキストエリア */
+.p-content-archive-text {
+    padding: 1em 0 0 0;            /*内余白の設定*/
+
+    @include mixin.mq(tablet) {
+        padding: 1em 0;
+    }
+
+    @include mixin.mq(pc) {
+        padding: 1em 0 2em 0;
+    }      
+}
+
+/* single page ページ contents エリア */
+.p-content-si {
+    display: block;
+    /*padding: 0 1.3em; */              /*内余白の設定*/
+    padding: 2em 1.3em;
+
+    @include mixin.mq(tablet) {
+        /*padding: 0 4em; */             /*内余白の設定*/
+        padding: 2em 4em;
+        /*padding: 0 clamp(2em, 3.9vw, 4em);*/        
+    }
+
+    @include mixin.mq(pc) {
+        /*padding: 0 8em;*/        /* 内余白の設定 */
+        /*padding: 0 clamp(4em, 4.16vw, 8em); */  /* 内余白-横余白伸縮の設定 */
+        padding: 4em clamp(4em, 4.16vw, 8em);
+
+    }
+    
+    & > ol {
+        font-family: variable.$font-family--jp;
+        margin-left: 3em;
+        list-style-type: decimal;
+        list-style-position: inside;    
+    
+        ol {
+            margin-left: 1em;
+            list-style-type: decimal;
+            list-style-position: inside; 
+        }
+    }
+    
+    & > ul {
+        margin-left: 3em;
+        ul {
+            margin-left: 1em;
+        }
+    }
+
+    & > * {
+        margin-bottom: 2rem;
+
+        @include mixin.mq(tablet) {
+            margin-bottom: 5rem;
+        }
+    
+        @include mixin.mq(pc) {
+            margin-bottom: 5rem;       
+        } 
+    }
+}
+
+/* single page ページ contentsエリア ブロックの設定 */
+.p-content-si-block {
+    display: block;
+    margin: 2rem 0;     /* 外余白の設定 */
+
+    @include mixin.mq(tablet) {
+        margin: 5rem 0;
+    }
+
+    @include mixin.mq(pc) {
+        margin: 5rem 0;        
+    } 
+
+    & p {
+        margin: 2rem 0;
+
+        @include mixin.mq(tablet) {
+            margin: 5rem 0;
+        }
+    
+        @include mixin.mq(pc) {
+            margin: 5rem 0;        
+        } 
+    }
+}
+
+/*  single page ページ 最下部の余白 */
+.p-content-si-margin {
+    display: block;
+    margin: 0;
+    padding-top: 9.5em;
+
+    @include mixin.mq(tablet) {
+        padding-top: 12em;
+    }
+
+    @include mixin.mq(pc) {
+        padding-top: 19em;       
+    } 
+}
+
+/* single page ページ contentsエリア blockquoteエリア の設定 */
+.p-content-blockquote {
+    padding: 0.1em 1.3em;
+
+    @include mixin.mq(tablet) {
+        padding: 0.1em 3em;
+    }
+
+    @include mixin.mq(pc) {
+        padding: 0.1em 3em;      
+    } 
+
+    & > p a {
+        text-decoration: underline;
+        color: color.$color-font--link;
+    }
+}
+
+/* single page ページ contentsエリア HTMLコードエリアの設定 */
+.p-content-pre {   
+    margin: 2rem 0;
+    padding: 1.5em 3em;
+    white-space: pre-wrap;
+
+    @include mixin.mq(tablet) {
+        margin: 5rem 0;
+    }
+
+    @include mixin.mq(pc) {
+        margin: 6rem 0;      
+    } 
+}
+
+/* single page ページ contentsエリア tableエリアの設定 */
+.p-content-table {  
+    width: 100%;  
+    margin: 3rem 0;          
+
+    @include mixin.mq(tablet) {
+        margin: 6rem 0;
+    }
+
+    @include mixin.mq(pc) {
+        margin: 5rem 0;       
+    } 
+
+    & td {
+        padding: 1.6em 1.8em; 
+        border: 1px solid color.$color-table--line;
+    }
+
+    /*テーブル 列１*/
+    &-item-1 {
+        width: 40%;
+        
+        @include mixin.mq(tablet) {
+            width: 29%;
+        }
+    
+        @include mixin.mq(pc) {
+            width: 42%;    
+        } 
+    }
+
+    /*テーブル 列２*/
+    &-item-2 {
+        width: 60%;
+
+        @include mixin.mq(tablet) {
+            width: 71%;
+        }
+    
+        @include mixin.mq(pc) {
+            width: 58%;    
+        } 
+    }
+}
+

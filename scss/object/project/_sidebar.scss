@@ -1,0 +1,155 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* サイドバー部の設定 */
+.p-sidebar {
+	width: 85%;         /* 横幅 スマホは右から85％幅 */
+	height: 100vh;      /* 高さ */
+	position: fixed;    /* 表示位置 固定*/
+	top: 0;             /* 上からの位置 */
+	/*left: 115%;*/         /* 左からの位置 右横外側 15％ -- 課題修正指摘あり → left:100%にする*/
+    left: 100%;         /* 左からの位置 右横外側 15％ */
+    overflow-y: auto;   /* 縦 スクロール */
+    transition: .4s;    /* 表示時間 0.4秒 */
+    z-index: 2000;
+
+    @include mixin.mq(tablet) {
+        width: 45%;     /* 横幅 タブレットは右から45％幅 */
+        height: 100vh;  /* 高さ */
+        left: 155%;     /* 左からの位置 右横外側 55％ */
+    }
+
+    @include mixin.mq(pc) {
+        width: 100%;        /* 横幅 PCは100％幅 */
+        height: 100%;       /* 高さ PCは100％高さ */
+        //height: 100vh;
+ 		position: static;   /* 表示位置 staticに*/
+		overflow: hidden;   /* スクロール 非表示*/
+		z-index: auto;      /* 表示優先順位 autoに設定*/		
+	}
+    
+    /* スマホとタブレットのスモーク表示 */ /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+    /*&::after {*/
+        /*content: "";*/
+        /*width: 15%;*/         /* 横幅 スマホは左から15％幅 */
+        /*width: 100%;*/         /* 横幅 スマホは左から15％幅 */
+        /*height: 100vh;*/      /* 高さ */
+        /*background: color.$color-bg--sideber--transparent; */ /* 透過度60% */
+        /*position: fixed;*/    /* 表示位置を設定 */
+        /*position: absolute;*/    /* 表示位置を設定 */
+        /*top: 0;*/             /* 上からの位置設定 */
+        /*left: 100%;*/         /* 左からの位置設定 */
+        /*transition: .4s;*/    /* 表示時間 0.4秒 */   
+        /*z-index: 300; */    
+    
+        /*@include mixin.mq(tablet) {*/
+            /*width: 55%;*/     /* 横幅 スマホは左から55％幅 */
+            /*width: 100%; */    /* 横幅 スマホは左から55％幅 */
+        /*}*/
+    
+        /*@include mixin.mq(pc) {*/
+            /*display: none;*/  /* PCは非表示 */
+            /*width: 0;*/     /* 横幅 PCは非表示のため 幅0 */
+            /*height: 0; */   /* 高さ PCは非表示のため 高さ0 */
+        /*} */ 
+    /*}*/
+
+    /* サイドバーを表示 */
+    &.is-open {
+		top: 0;             /* 上からの位置設定 */
+		left: 15%;          /* 左からの位置設定 スマホは15%*/
+        /*z-index: 2000;*/  /* 上で設定しているのではずす*/
+       
+        @include mixin.mq(tablet) {
+            left: 55%;       /* 左からの位置設定 タブレットは55%*/
+        }
+
+        /*&::after {*/ /* 課題修正指摘あり → サイドバーと一緒にスライドは付加、全体をフェードインの仕様指示あり → menubg.scssに設定する*/
+            /*content: "";*/
+            /*top: 0; */          /* 上からの位置設定 */
+            /*left: 0;*/          /* 左からの位置設定 左端*/
+        /*}*/
+	}
+}
+
+/* サイドバーを表示した時、サイドバー以外はスクロールしない設定 *//*→ body.scssに移動*/
+/*body.is-open {*/
+    /*position: fixed;*/         /* 表示位置を固定*/
+/*}*/
+
+/* サイドバー部 PC画面の時に「MENU」の表示設定 */
+.p-sidebar-menu {
+    display: none;  /* スマホ・タブレットは非表示 */
+
+    @include mixin.mq(pc) {
+        display: inline-block;  /* inline-blockにする */
+        margin-top: 2.5em;      /* 上余白設定 */
+        margin-left: 1.5em;     /* 左余白設定 */
+    }    
+}
+
+/* サイドバー部の カテゴリーエリア全体枠の設定 */
+.p-sidebar-category_body {
+    display: block;
+    position: relative;     /* 表示位置の基準値を設定する */
+    padding-top: 6em;      /* 上余白設定  */
+
+    @include mixin.mq(pc) {
+        margin-top: 0;      /* 上余白設定 */ 
+        padding-top: 0;     /* 上余白設定 */
+    }     
+
+}
+
+/* サイドバー部の カテゴリーエリア内側の設定 */
+.p-sidebar-category_inner {
+    display: flex;
+    flex-direction: column;       /* 縦並び */
+    padding: 0 2em 2em 2em;                 /* 上下左右余白 */
+
+    @include mixin.mq(pc) {
+        margin-top: 0;      /* 上余白設定 */    
+    }
+    
+    & > li {
+        padding-top: 2.5em;
+    }
+
+}
+
+/* サイドバー部の カテゴリーの設定 */
+.p-sidebar-category {
+    display: inline-block;
+    //margin-top: 1em;
+    padding-top: 1em;
+ 
+    @include mixin.mq(pc) {
+        //margin-top: 1em;
+        padding-top: 1em;
+    }
+    
+}
+
+/* サイドバー部の カテゴリーアイテムエリアの設定 */
+.p-sidebar-category-item_body {
+    display: flex;
+    flex-direction: column;
+    /*margin-top: 1em;*/
+    padding-top: 1em;
+
+    & > li {
+        display: inline-block;
+        padding: 0.5em 1em;
+        white-space: nowrap;  
+    }
+}
+
+/* サイドバー部の カテゴリー アイテムの設定 */
+.p-sidebar-category-item {
+    display: inline-block;
+    padding: 0.5em 1em;
+    white-space: nowrap;    
+}
+
+

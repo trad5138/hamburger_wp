@@ -1,0 +1,156 @@
+@use "../../foundation/mixin";
+@use "../../foundation/color";
+@use "../../foundation/variable";
+
+/* アクセスマップ エリア */
+.p-access-map {
+    position: relative;         /* 表示位置の基準値を設定する */
+    width: 100%;
+    min-height: 69em;           /* 高さの最小値を設定 */
+    padding-top: 184.2%;        /* 縦横比率を設定 縦長に設定*/
+
+    @include mixin.mq(tablet) {
+        min-height: 40em;       /* 高さの最小値を設定 */
+        padding-top: 49.7%;     /* 縦横比率を設定 横長に設定 */
+    }
+
+    @include mixin.mq(pc) {
+        min-height: 64em;       /* 高さの最小値を設定 */
+        padding-top: 41.2%;     /* 縦横比率を設定  横長に設定 */
+    }  
+
+    /* マップの上にある薄いスモークの設定 */
+    &::before {
+        content: "";
+        width: 100%;            /* 薄いスモークの横幅 */
+        height: 100%;           /* 薄いスモークの高さ */
+        background-color: color.$color-bg--map--cover--light;  /* 透過度30% */
+        position: absolute;     /* 表示位置を設定 */
+        top: 0;                 /* 上からの位置設定 */
+        left: 0;                /* 左からの位置設定 */
+        z-index: 100;           /* マップの上に表示 */
+    
+        @include mixin.mq(tablet) {
+            width: 100%;        /* 薄いスモークの横幅 */
+            height: 100%;       /* 薄いスモークの高さ */
+        }
+    
+        @include mixin.mq(pc) {
+            width: 100%;        /* 薄いスモークの横幅 */
+            height: 100%;       /* 薄いスモークの高さ */
+        }  
+    }
+
+    /* マップの上にあり、テキストの下にある濃いスモークの設定 */
+    &::after {
+        content: "";
+        width: 100%;            /* 濃いスモークの横幅 */
+        height: 60%;            /* 濃いスモークの高さ */
+        background-color: color.$color-bg--map--cover--dark;  /* 透過度40% */
+        position: absolute;     /* 表示位置を設定 */
+        top: 0;                 /* 上からの位置設定 */
+        left: 0;                /* 左からの位置設定 */
+        z-index: 200;           /* マップの上 ＆ 薄いスモークの上に表示 */
+    
+        @include mixin.mq(tablet) {
+            width: 100%;        /* 濃いスモークの横幅 */
+            height: 100%;       /* 濃いスモークの高さ */
+        }
+    
+        @include mixin.mq(pc) {
+            width: 60%;         /* 濃いスモークの横幅 */
+            height: 100%;       /* 濃いスモークの高さ */
+        }  
+    }
+
+    /* マップの上にある タイトルとテキストのエリアの設定 */
+    &_inner {
+        display: block;         /* blockに設定 */
+        position: relative;     /* 表示位置の基準値を設定する z-indexを効かせるため absoluteだと文字数が増えた時に伸縮せず、はみ出る*/
+        margin-top: -184.2%;    /* 親要素で縦横比（アスペクト比）を設定しているため、その値分マイナスで上に表示する設定 */
+        width: 100%;            /* 横幅の設定 */
+        height: 60%;            /* 高さの設定 */
+        padding: 3em 4em;       /* 上下左右の余白の設定 */
+        z-index: 300;           /* マップの上 ＆ 濃いスモークの上に表示 */
+
+        @include mixin.mq(tablet) {
+            margin-top: -49.7%;     /* 親要素で縦横比（アスペクト比）を設定しているため、その値分マイナスで上に表示する設定 */
+            width: 100%;
+            height: 100%;
+            padding: 3em 4em;
+        }
+
+        @include mixin.mq(pc) {
+            margin-top: -41.2%;    /* 親要素で縦横比（アスペクト比）を設定しているため、その値分マイナスで上に表示する設定 */
+            width: 60%;
+            height: 100%;
+            padding: 5.5em 8.5em;
+        } 
+        
+        /* マップの上にあるタイトルの設定 */
+        &_title {
+            display: inline-block;   /* inline-blockに設定 */
+            position: relative;      /* アンダーラインを疑似要素で表示するために、表示位置の基準値を設定 */
+                    
+            /* タイトル下のアンダーラインの設定 */
+            &::after {
+                content: '';
+                position: absolute;        /* 表示位置を設定 */
+                left: 0;                   /* 左からの位置 */
+                bottom: -0.4em;            /* 線の上下位置 */
+                display: inline-block;     /* inline-blockで設定 */
+                width: 2.5em;              /* 線の長さ */
+                height: 2px;               /* 線の太さ */
+                transform: translateX(0);  /* 位置調整 */
+                background-color: color.$color-font--map--title; /*線の色*/
+
+                @include mixin.mq(pc) {
+                    bottom: -1.1em;        /* 線の上下位置 */
+                } 
+            }  
+        }
+
+        /* マップの上にあるテキストの設定 */
+        &_text {
+            margin-top: 2em;        /* 上余白 */
+
+            @include mixin.mq(tablet) {
+                margin-top: 2.2em;
+            }
+    
+            @include mixin.mq(pc) {
+                margin-top: 4.5em;
+            }             
+        }
+
+        & p {
+            margin-top: 2em;        /* 上余白 */
+            font-family: variable.$font-family--jp;
+            font-size: variable.$font-size--map-text--sp;
+            font-weight: variable.$font-weight--bold;
+            color: color.$color-font--map--text;
+            line-height: variable.$line-height--x-wide;
+
+            @include mixin.mq(tablet) {
+                margin-top: 2.2em;
+                font-size: variable.$font-size--map-text--tablet;
+            }
+    
+            @include mixin.mq(pc) {
+                margin-top: 4.5em;
+                font-size: variable.$font-size--map-text--pc;
+            }        
+
+        }
+    }
+
+    /* google マップの設定 */
+    & iframe {
+        position: absolute;     /* 表示位置を設定 */
+        top: 0;                 /* 上からの位置設定 */
+        left: 0;                /* 左からの位置 */        
+        height: 100%;           /* 横幅 */
+        width: 100%;            /* 高さ */
+    }
+}
+
