@@ -318,11 +318,10 @@
     /**
     * 投稿表示用のスタイリング-editor-style.css
     */
-    //function hamburger_theme_add_editor_styles(){
-        //add_editor_style( get_template_directory_uri() . "/css/editor-style.css" );
-    //}
-  
-    //add_action( 'admin_init','hamburger_theme_add_editor_styles');
+    function hamburger_theme_add_editor_styles(){
+        add_editor_style( get_template_directory_uri() . "/css/editor-style.css" );
+    }
+    add_action( 'admin_init','hamburger_theme_add_editor_styles');
 
     /**
     * フィードの設定
@@ -367,37 +366,71 @@
     * カスタム投稿
     */ 
     add_action( 'init', function() {
-        //mapの上の見出しテキスト入力のカスタム投稿
-        register_post_type('news', [
-            'label' => 'お知らせ',   //管理画面表示名
-            'public' => true,     //管理画面に表示する
-            'menu_position' => 20,  //管理画面の表示位置--メディアの下
-            'menu_icon' => 'dashicons-pets', //アイコンの設定
-            'supports' => ['title','editor'],
-            'show_in_rest' => true
+        //フロントページのメインヴィジュアルとタイトルテキスト入力
+        register_post_type('toptitle', [
+        'label' => 'トップページタイトルと画像',   //管理画面表示名
+        'public' => true,     //管理画面に表示する
+        'menu_position' => 20,  //管理画面の表示位置--メディアの下
+        'menu_icon' => 'dashicons-pets', //アイコンの設定
+        'supports' => ['title','thumbnail'],
+        'show_in_rest' => true
         ]);
+        
+        //mapの上の見出しテキスト入力のカスタム投稿
+        //register_post_type('news', [
+        //    'label' => 'お知らせ',   //管理画面表示名
+        //    'public' => true,     //管理画面に表示する
+        //    'menu_position' => 20,  //管理画面の表示位置--メディアの下
+        //    'menu_icon' => 'dashicons-pets', //アイコンの設定
+        //    'supports' => ['title','editor'],
+        //    'show_in_rest' => true
+        //]);
 
         //mapの設定のカスタム投稿
         register_post_type('map', [
-            'label' => '地図',   //管理画面表示名
+            'label' => '地図と地図上テキスト',   //管理画面表示名
             'public' => true,     //管理画面に表示する
             'menu_position' => 20,  //管理画面の表示位置--メディアの下
             'menu_icon' => 'dashicons-pets', //アイコンの設定
+            //'supports' => ['title','editor','custom-fields'],
             'supports' => ['title','editor'],
             'show_in_rest' => true
         ]);
-
-        //フロントページのメインヴィジュアル上のテキスト入力
-        register_post_type('toptitle', [
-            'label' => 'トップページタイトル',   //管理画面表示名
-            'public' => true,     //管理画面に表示する
-            'menu_position' => 20,  //管理画面の表示位置--メディアの下
-            'menu_icon' => 'dashicons-pets', //アイコンの設定
-            'supports' => ['title','thumbnail'],
-            'show_in_rest' => true
-        ]);
-
     });
+
+    /*
+    * カスタムフィールド
+    */
+    function add_mapdetail_fields() {
+        add_meta_box(
+            'map_setting',              //カスタムフィールドブロックに割り当てるID名
+            '地図情報',                  //カスタムフィールドのタイトル
+            'insert_mapdetail_fields',  //入力エリアの HTML
+            'map',                      //投稿タイプ。サンプルでは カスタムタクソノミー名。他に post 等が指定可能
+            'normal'                    //カスタムフィールドが表示される部分
+        );
+    }
+    add_action( 'admin_menu', 'add_mapdetail_fields' );
+
+    //カスタムフィールド入力エリアの設定（地図情報：googleマップコード）
+    function insert_mapdetail_fields() {
+        global $post;
+        $map = get_post_meta( $post->ID, 'map', true );        
+        echo '<form method="post" action="admin.php?page=site_settings">';
+        echo '<label for="map_code">googleマップコード：</label><br>';
+        echo '<textarea name="map_code" id="map_code" rows="4"  style="width:100%;">'.get_post_meta( $post->ID, 'map_code', true ).'</textarea>';
+        echo '</form>'; 
+    }
+
+    //カスタムフィールドの値を保存
+    function save_custom_fields( $post_id ) {
+        if( !empty( $_POST['map_code'] ) ){
+            update_post_meta( $post_id, 'map_code', $_POST['map_code'] );
+        } else {
+            delete_post_meta( $post_id, 'map_code' );
+        }
+    }
+    add_action( 'save_post', 'save_custom_fields' );
     
     //本体ギャラリーCSS停止
     add_filter( 'use_default_gallery_style', '__return_false' );

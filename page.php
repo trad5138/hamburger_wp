@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main class="l-main">
+<main class="l-main c-bgcolor-content">
     <?php
         if(have_posts()):
             while( have_posts() ): the_post(); ?>
