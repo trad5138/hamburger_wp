@@ -375,18 +375,8 @@
         'supports' => ['title','thumbnail'],
         'show_in_rest' => true
         ]);
-        
-        //mapの上の見出しテキスト入力のカスタム投稿
-        //register_post_type('news', [
-        //    'label' => 'お知らせ',   //管理画面表示名
-        //    'public' => true,     //管理画面に表示する
-        //    'menu_position' => 20,  //管理画面の表示位置--メディアの下
-        //    'menu_icon' => 'dashicons-pets', //アイコンの設定
-        //    'supports' => ['title','editor'],
-        //    'show_in_rest' => true
-        //]);
 
-        //mapの設定のカスタム投稿
+        //mapの設定とmapの上の見出しテキスト入力のカスタム投稿
         register_post_type('map', [
             'label' => '地図と地図上テキスト',   //管理画面表示名
             'public' => true,     //管理画面に表示する

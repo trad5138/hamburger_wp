@@ -9,13 +9,9 @@
     <article class="p-content c-bgcolor-content">        
         <section> 
             <?php if(!is_paged()):?>           
-                <!--<h3 class="c-title-as-content"><?php //single_term_title() ?></h3>-->
-                <!--<div class="p-content-text c-text-as-base">-->
                 <div class="p-content-archive-text c-text-as-base">        
                         <?php if(category_description()):?>
                             <?php echo category_description(); ?>
-                            <?php //$description = get_the_archive_description(); ?>
-                            <?php //echo wp_kses_post( wpautop( $description ) ); ?>
                         <?php endif;?>                    
                 </div> 
             <?php endif;?>                                  

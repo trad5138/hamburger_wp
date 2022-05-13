@@ -76,44 +76,29 @@
         <div class="p-access-map">
             <div class="p-access-map_inner">
                 <?php 
-                    //map上のテキストエリア
-                    $news_args = array(
-                        //'post_type' => 'page', //固定ページ
-                        'post_type' => 'news',  //カスタム投稿
-                        //'pagename' => 'news'  //固定ページのタイトル「お知らせ」
+                    //map上のテキストエリアとmap
+                    $map_args = array(
+                        'post_type' => 'map',  //カスタム投稿
                         'posts_per_page' => 1
                     );
 
-                    $news_new_query = new WP_Query( $news_args );
-                    if ( $news_new_query->have_posts() ) :
-                        while ( $news_new_query->have_posts() ) :
-                            $news_new_query->the_post();
-                            get_template_part( 'template-parts/content', 'news' );
+                    $map_new_query = new WP_Query( $map_args );
+                    if ( $map_new_query->have_posts() ) :
+                        while ( $map_new_query->have_posts() ) :
+                            $map_new_query->the_post();
+                            $googlemap = get_post_meta(get_the_ID(),'map_code',true);
+                            get_template_part( 'template-parts/content', 'access' );
                         endwhile;
                         wp_reset_postdata();
                     endif;
                 ?>
             </div>
             <?php 
-                //mapの設定
-                $map_args = array(
-                    //'post_type' => 'page', //固定ページ
-                    'post_type' => 'map',  //カスタム投稿
-                    //'pagename' => 'map'  //固定ページのタイトル「お知らせ」
-                    'posts_per_page' => 1
-                );
-
-                $map_new_query = new WP_Query( $map_args );
-                if ( $map_new_query->have_posts() ) :
-                    while ( $map_new_query->have_posts() ) :
-                        $map_new_query->the_post();
-                        the_content();
-                    endwhile;
-                    wp_reset_postdata();
-            ?>
-                <?php else: ?>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747975468375!2d139.74324421554965!3d35.658580480199454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1645107480843!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                <?php endif; ?>
+                 if (isset($googlemap)):
+                    echo $googlemap; //googlemap表示
+                else: ?>
+                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.747975468375!2d139.74324421554965!3d35.658580480199454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bbd9009ec09%3A0x481a93f0d2a409dd!2z5p2x5Lqs44K_44Ov44O8!5e0!3m2!1sja!2sjp!4v1645107480843!5m2!1sja!2sjp" width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <?php endif; ?>
         </div>
     </section> 
 </main> 
