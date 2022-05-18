@@ -4,7 +4,6 @@
 .l-container {
 
     @include mixin.mq(pc) {
-        //height: 100vh;
         height: 100%;
         display: grid;                        /* grid設定 */
         grid-template-rows: 217px 1fr 150px;  /* 縦（行）の設定 */

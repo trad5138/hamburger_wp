@@ -8,40 +8,40 @@
 
     @include mixin.mq(tablet) {  
         display: block; 
-	clear: both;
-    text-align: center;   
-    font-family: variable.$font-family--eng;
-    font-size: variable.$font-size--arcive-pagination--pc;
-    font-weight: variable.$font-weight--bold; 
-    color: color.$color-font--pagination;   
+        clear: both;
+        text-align: center;   
+        font-family: variable.$font-family--eng;
+        font-size: variable.$font-size--arcive-pagination--pc;
+        font-weight: variable.$font-weight--bold; 
+        color: color.$color-font--pagination;   
 
-    & a,
-    & span {
-        text-decoration: none;
-        border: 1px solid color.$color-border--pagination;
-        padding: 0.5em 0.8em;
-        margin: 0.5em;
-        width: 34px;
-        height: 34px;
-        text-align: center;
-    }
+        & a,
+        & span {
+            text-decoration: none;
+            border: 1px solid color.$color-border--pagination;
+            padding: 0.5em 0.8em;
+            margin: 0.5em;
+            width: 34px;
+            height: 34px;
+            text-align: center;
+        }
 
-    & a:hover,
-    & span.current {
-        background-color: color.$color-bg--pagination--this;
-        color: color.$color-font--pagination--this;
-    }
+        & a:hover,
+        & span.current {
+            background-color: color.$color-bg--pagination--this;
+            color: color.$color-font--pagination--this;
+        }
 
-    & span.current {
-        font-weight: bold;
-        background-color: color.$color-bg--pagination--this;
-        color: color.$color-font--pagination--this;
-    }
+        & span.current {
+            font-weight: bold;
+            background-color: color.$color-bg--pagination--this;
+            color: color.$color-font--pagination--this;
+        }
 
-    & span.pages,
-    & .previouspostslink,
-    & .nextpostslink {
-        border: none;
+        & span.pages,
+        & .previouspostslink,
+        & .nextpostslink {
+            border: none;
+        }
     }
-}
 }

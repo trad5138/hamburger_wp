@@ -16,8 +16,6 @@
                     </article>
                 </div> 
             <?php endwhile; ?>
-        <?php //else:?>
-        <!--<p><?php //esc_html_e( 'no post data', 'hamburger' ); ?></p>-->  <!--//固定ページはページが無いことはないので削除-->
     <?php endif; ?>
 </main> 
 <?php get_sidebar(); ?>

@@ -122,26 +122,6 @@
                 margin-top: 4.5em;
             }             
         }
-
-        & p {
-            margin-top: 2em;        /* 上余白 */
-            font-family: variable.$font-family--jp;
-            font-size: variable.$font-size--map-text--sp;
-            font-weight: variable.$font-weight--bold;
-            color: color.$color-font--map--text;
-            line-height: variable.$line-height--x-wide;
-
-            @include mixin.mq(tablet) {
-                margin-top: 2.2em;
-                font-size: variable.$font-size--map-text--tablet;
-            }
-    
-            @include mixin.mq(pc) {
-                margin-top: 4.5em;
-                font-size: variable.$font-size--map-text--pc;
-            }        
-
-        }
     }
 
     /* google マップの設定 */

@@ -7,7 +7,7 @@
                     <img src="<?php echo $eyecatch[0]; ?>">
                 </div>
                 <figcaption class="p-card-item">
-                    <h3 class="p-card-item-title c-title-as-card"><!--<a href="<?php //the_permalink(); ?>">--><?php the_title(); ?><!--</a>--></h3>
+                    <h3 class="p-card-item-title c-title-as-card"><?php the_title(); ?></h3>
                     <?php
                         //contentから100文字分取得（htmlタグは除く）                            
                         if(mb_strlen($post->post_content, 'UTF-8')>200){
@@ -36,13 +36,11 @@
                         $strcontents = implode($arraysecondlast);
                     ?>
                     <h4 class="p-card-item-subtitle c-title-as-card-subtitle"><?php echo $array[0]; ?></h4>
-                    <div class="p-card-item-text .c-text-as-card">
+                    <div class="p-card-item-text c-text-as-card">
                         <p><?php echo $strcontents; ?></p>
-                        <?php //the_excerpt(); ?>  
-                        <?php //the_content(""); ?>
                     </div>
                     <div class="p-button-card">
-                        <button class="c-button-card c-text-as-card-button"><!--<a href="<?php //the_permalink(); ?>">-->詳しく見る<!--</a>--></button>
+                        <button class="c-button-card c-text-as-card-button">詳しく見る</button>
                     </div>
                 </figcaption>
             </figure>

@@ -111,40 +111,27 @@
     align-self: flex-end;               /* 下揃え --- 多分効いていない */
     width: 100%;
     margin-top: 1em;
-    /*padding: 2em 1em;*/               /*内余白の設定*/
-    padding: 1em 1em 1.5em 1em;         /*内余白の設定* --- XD仕様変更対応*/
+    padding: 1em 1em 1.5em 1em;         /*内余白の設定*/
 
     @include mixin.mq(tablet) {
-        
-        /*padding: 2em 1em;*/           /*内余白の設定*/
-        padding: 1em 1em 1.5em 1em;     /*内余白の設定* --- XD仕様変更対応*/
+        padding: 1em 1em 1.5em 1em;     /*内余白の設定*/
     }
     
     @include mixin.mq(pc) {
         margin-top: 2em;
-        /*padding: 2em 2em; */          /*内余白の設定*/
-        padding: 1em 2em 1.5em 2em;     /*内余白の設定* --- XD仕様変更対応*/
+        padding: 1em 2em 1.5em 2em;     /*内余白の設定*/
     }  
 
-    /* サービスメニュー Take Out / Eat In の記事本文部の設定 --- XD仕様変更により削除 */
+    /* サービスメニュー Take Out / Eat In の記事本文部の設定 */
     &_dd {
-        padding-top: 0.3em;             /*内余白の設定* --- XD仕様変更対応*/
-        /*padding: 1em 0 1.5em 0;*/     /*内余白の設定*/
-        /*padding: 1em 0 0.5em 0;*/     /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
-        /*padding: 1em 0 0 0;*/         /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
+        padding-top: 0.3em;             /*内余白の設定*/
 
         @include mixin.mq(tablet) {
-            padding-top: 0.3em;         /*内余白の設定* --- XD仕様変更対応*/
-            /*padding: 1em 0 2em 0;*/   /*内余白の設定*/
-            /*padding: 1em 0 0.5em 0;*/ /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
-            /*padding: 1em 0 0 0;*/     /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
+            padding-top: 0.3em;         /*内余白の設定*/
         }
         
         @include mixin.mq(pc) {
-            padding-top: 0.5em;         /*内余白の設定* --- XD仕様変更対応*/
-            /*padding: 1em 0 3.5em 0;*/ /*内余白の設定*/
-            /*padding: 1em 0 0.5em 0;*/ /*内余白の設定 -- 課題修正指摘あり → 下余白を小さくして、上の余白と同じ大きさにする*/
-            /*padding: 1em 0 0 0;*/     /*内余白の設定 -- 課題修正指摘あり → 下余白0の指示あり*/
+            padding-top: 0.5em;         /*内余白の設定*/
         }  
     }
 }

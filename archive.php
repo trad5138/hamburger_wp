@@ -9,7 +9,7 @@
     <article class="p-content c-bgcolor-content">        
         <section> 
             <?php if(!is_paged()):?>           
-                <div class="p-content-archive-text c-text-as-base">        
+                <div class="p-content-text c-text-as-base">        
                         <?php if(category_description()):?>
                             <?php echo category_description(); ?>
                         <?php endif;?>                    
@@ -23,8 +23,6 @@
                         the_post(); ?> 
                         <?php get_template_part( 'template-parts/content', 'card' ); ?>
                 <?php endwhile; ?>
-            <?php //else: ?>
-                <?php //get_template_part( 'template-parts/content-none' ); ?>  <!--//ページが無いことはないので削除-->
             <?php endif; ?>
             <?php get_template_part( 'template-parts/content','pagination' ); ?>    <!--//ページネーション-->
         </section>   

@@ -6,12 +6,6 @@
         /**
          * テーマサポート
          */
-        
-        /**
-        * メニュー
-        */ 
-        //add_theme_support( 'menus' );
-        
         /**
         * タイトルタグ
         */
@@ -211,7 +205,6 @@
         */ 
         add_theme_support( 'editor-styles' ); 
         add_editor_style( 'css/editor-style.css' );
-        //add_editor_style( 'editor-style.css' );
         add_editor_style( 'https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@100;300;400;500;700;900&display=swap' );
         add_editor_style( 'https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap' );
     

@@ -4,22 +4,6 @@
 @use "../foundation/variable";
 
 /*ボタンの設定*/
-
-//.wp-block-button {
-	//color: color.$color-font--text;
-	//background-color: color.$color-bg--button--search-gradient;
-	//border-radius: variable.$radius--x-large;
-	//box-shadow: none;
-	//cursor: pointer;
-	//display: inline-block;
-	//font-size: 1.125em;
-	//padding: calc(0.667em + 2px) calc(1.333em + 2px);
-	//text-align: center;
-	//text-decoration: none;
-	//word-break: break-word;
-	//box-sizing: border-box;
-	//border: 1px solid color.$color-border--button;
-//}
 .wp-block-button__link {
 	color: color.$color-font--text;
 	background-color: color.$color-bg--button--search-gradient;

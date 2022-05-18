@@ -20,9 +20,8 @@
 @forward "block/code";
 @forward "block/color";
 @forward "block/font-size";
-@forward "block/gallery-5";
+@forward "block/gallery";
 @forward "block/heading";
-//@forward "block/list";
 @forward "block/media-text";
 @forward "block/quote";
 
@@ -48,8 +47,6 @@
 //@forward "object/component/*";
 @forward "object/component/bgcolor";
 @forward "object/component/button";
-@forward "object/component/card";
-@forward "object/component/icon";
 @forward "object/component/image";
 @forward "object/component/searchform";
 @forward "object/component/text";
@@ -68,11 +65,9 @@
 @forward "object/project/copyright";
 @forward "object/project/footer";
 @forward "object/project/header";
-@forward "object/project/list";
 @forward "object/project/mainvisual";
 @forward "object/project/menubg";
 @forward "object/project/pagination";
-@forward "object/project/photo";
 @forward "object/project/searchform";
 @forward "object/project/servicemenu";
 @forward "object/project/sidebar";
@@ -82,11 +77,6 @@
 // -----------------------------------------------------------------
 
 //@import "object/utility/*";
-//@import "object/utility/_clearfix";
-//@import "object/utility/_margin";
-//@import "object/utility/_position";
-//@import "object/utility/_size";
-//@import "object/utility/_text";
 
 // ==========================================================================
 // Plugin

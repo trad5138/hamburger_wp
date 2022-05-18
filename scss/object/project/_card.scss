@@ -9,7 +9,6 @@
     min-height: 58em;            /* 高さ--最小値を設定しておく*/
     box-sizing: border-box; 
     margin-top: 2em;
-    /*margin: 1em 0;*/
 
     @include mixin.mq(tablet) {
         min-height: 30em; 
@@ -98,11 +97,7 @@
         height: 100%;
         padding: 4em 4.5em;
     }
-
-    /*&-title {
-        white-space: nowrap;
-    }*/
-    
+ 
     &-subtitle {
         margin-top: 0.8em;
 
@@ -118,107 +113,4 @@
             margin-top: 0.5em;
         }
     }
-}
-
-.p-card-item-text {
-    & h2 {
-        font-size: variable.$font-size--single-h2--sp;
-        font-weight: variable.$font-weight--bold;
-        letter-spacing: variable.$letter-spacing--h2;
-        color: color.$color-font--card--text;
-        line-height: variable.$line-height--h2;
-
-        @include mixin.mq(tablet) {
-            font-size: variable.$font-size--single-h2--tablet;
-        }
-
-        @include mixin.mq(pc) {
-            font-size: variable.$font-size--single-h2--pc;
-        }   
-    }
-
-    & h3 {
-        font-size: variable.$font-size--single-h3--sp;
-        font-weight: variable.$font-weight--bold;
-        letter-spacing: variable.$letter-spacing--h3;
-        color: color.$color-font--card--text;
-        line-height: variable.$line-height--h3;
-
-        @include mixin.mq(tablet) {
-            font-size: variable.$font-size--single-h3--tablet;
-        }
-
-        @include mixin.mq(pc) {
-            font-size: variable.$font-size--single-h3--pc;
-        }    
-    }
-
-    & h4 {
-        font-size: variable.$font-size--single-h4--sp;
-        font-weight: variable.$font-weight--bold;
-        letter-spacing: variable.$letter-spacing--h4;
-        color: color.$color-font--card--text;
-        line-height: variable.$line-height--h4;
-
-        @include mixin.mq(tablet) {
-            font-size: variable.$font-size--single-h4--tablet;
-        }
-
-        @include mixin.mq(pc) {
-            font-size: variable.$font-size--single-h4--pc;
-        }   
-    }
-
-    & h5 {
-        font-size: variable.$font-size--single-h5--sp;
-        font-weight: variable.$font-weight--bold;
-        letter-spacing: variable.$letter-spacing--h5;
-        color: color.$color-font--card--text;
-        line-height: variable.$line-height--h5;
-
-        @include mixin.mq(tablet) {
-            font-size: variable.$font-size--single-h5--tablet;
-        }
-
-        @include mixin.mq(pc) {
-            font-size: variable.$font-size--single-h5--pc;
-        }    
-    }
-
-    & h6 {
-        font-size: variable.$font-size--single-h6--pc;
-        font-weight: variable.$font-weight--bold;
-        letter-spacing: variable.$letter-spacing--h6;
-        color: color.$color-font--card--text;
-        line-height: variable.$line-height--h5;
-
-        @include mixin.mq(tablet) {
-            font-size: variable.$font-size--single-h6--tablet;
-        }
-
-        @include mixin.mq(pc) {
-            font-size: variable.$font-size--single-h6--pc;
-        }  
-    }
-
-    & p {
-        font-family: variable.$font-family--jp;
-        font-size: variable.$font-size--arcive-card-text--sp;
-        font-weight: variable.$font-weight--normal;
-        color: color.$color-font--card--text;
-        line-height: variable.$line-height--normal;
-
-    
-        @include mixin.mq(tablet) {
-            font-size: variable.$font-size--arcive-card-text--tablet;
-        }
-    
-        @include mixin.mq(pc) {
-            font-size: variable.$font-size--arcive-card-text--pc;
-        }
-        
-        //&:first-line{color:red;font-size:48px;}
-    }
-
-
 }

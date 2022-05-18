@@ -58,27 +58,21 @@
     /* 中段の中央位置にある画像の設定 */
     &-image_middle {
         width: 80%;
-        /*position: relative;*/           /* 表示位置の基準値を設定する */
         box-sizing: border-box;
-        /*padding-top: 62%;*/
         margin: 0 auto;
     
         @include mixin.mq(tablet) {
             width: 80%;
-            /*padding-top: 62%;*/            /* 縦横比率を設定 横長に設定 */
         }
     
         @include mixin.mq(pc) {
             width: 43%;
-            /*padding-top: 62%;*/            /* 縦横比率を設定 横長に設定 -- これを入れると下余白ができる */
         }
 
         & > img {
             width: 100%;
             height: auto;
-            /*position: absolute;*/     /* 表示位置を設定 */
-            /*top: 0;*/
-            /*left: 0;*/
+
             object-fit: cover;
             object-position: center bottom;
         }

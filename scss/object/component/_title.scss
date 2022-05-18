@@ -197,7 +197,7 @@
 }
 
 /*single ページ コンテンツエリア 見出し１*/
-.c-title-si-h1 {
+.c-title-h1 {
     font-family: variable.$font-family--jp;
     font-size: variable.$font-size--single-h1--sp;
     font-weight: variable.$font-weight--bold;
@@ -213,8 +213,8 @@
     }    
 }
 
-/*single ページ コンテンツエリア 見出し２*/
-.c-title-si-h2 {
+/*single ページ コンテンツエリア 見出し２ これつかっている*/
+.c-title-h2 {
     font-family: variable.$font-family--jp;
     font-size: variable.$font-size--single-h2--sp;
     font-weight: variable.$font-weight--bold;
@@ -231,7 +231,7 @@
 }
 
 /*single ページ コンテンツエリア 見出し３*/
-.c-title-si-h3 {
+.c-title-h3 {
     font-family: variable.$font-family--jp;
     font-size: variable.$font-size--single-h3--sp;
     font-weight: variable.$font-weight--bold;
@@ -248,7 +248,7 @@
 }
 
 /*single ページ コンテンツエリア 見出し４*/
-.c-title-si-h4 {
+.c-title-h4 {
     font-family: variable.$font-family--jp;
     font-size: variable.$font-size--single-h4--sp;
     font-weight: variable.$font-weight--bold;
@@ -265,7 +265,7 @@
 }
 
 /*single ページ コンテンツエリア 見出し５*/
-.c-title-si-h5 {
+.c-title-h5 {
     font-family: variable.$font-family--jp;
     font-size: variable.$font-size--single-h5--sp;
     font-weight: variable.$font-weight--bold;
@@ -281,9 +281,8 @@
     }    
 }
 
-
 /*single ページ コンテンツエリア 見出し６*/
-.c-title-si-h6 {
+.c-title-h6 {
     font-family: variable.$font-family--jp;
     font-size: variable.$font-size--single-h6--sp;
     font-weight: variable.$font-weight--bold;
@@ -296,6 +295,23 @@
 
     @include mixin.mq(pc) {
         font-size: variable.$font-size--single-h6--pc;
+    }    
+}
+
+/*404 ページ コンテンツエリア 見出し*/
+.c-title-404 {
+    font-family: variable.$font-family--jp;
+    font-size: variable.$font-size--single-h2--sp;
+    font-weight: variable.$font-weight--bold;
+    color: color.$color-font--text;
+    line-height: variable.$line-height--wide;
+
+    @include mixin.mq(tablet) {
+        font-size: variable.$font-size--single-h2--tablet;
+    }
+
+    @include mixin.mq(pc) {
+        font-size: variable.$font-size--single-h2--pc;
     }    
 }
 

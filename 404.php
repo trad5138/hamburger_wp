@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 <main class="l-main">
-    <div class="p-content-si c-bgcolor-content">
+    <div class="p-content c-bgcolor-content">
         <div class="p-content-si-block">
-            <h1 class="c-title-si-h2">ページが見つかりません</h1>
+            <h1 class="c-title-404">ページが見つかりません</h1>
         </div>
         <div class="p-content-si-block c-text-404">
             <p>お探しのページは、移動もしくは削除された可能性があります。<br>

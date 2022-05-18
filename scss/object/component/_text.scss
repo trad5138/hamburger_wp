@@ -5,7 +5,7 @@
 /* ヘッダー部*/
 /* 検索ボタン 文字*/
 .c-text-header-button {
-    /*font-family: variable.$font-family--jp;*/
+    font-family: variable.$font-family--jp;
     font-size: variable.$font-size--base;
     font-weight: variable.$font-weight--bold;
     color: color.$color-font--search--button;
@@ -13,12 +13,11 @@
 
 /* 検索ボックス 文字*/
 .c-text-header-search {
-    /*font-family: variable.$font-family--jp;*/
+    font-family: variable.$font-family--jp;
     font-size: variable.$font-size--base;    
     font-weight: variable.$font-weight--normal;
     color: color.$color-font--search--box;
 }
-
 
 /* index サービスメニュー内の 白背景エリアのテキスト */
 .c-text-service-menu {
@@ -36,7 +35,6 @@
         font-size: variable.$font-size--service-menu-text--pc;
     }
 }
-
 
 /* index ページ 地図の上のテキスト */
 .c-text-map {
@@ -140,7 +138,6 @@
     }
 }
 
-
 /*archive search ページ 標準テキスト*/
 .c-text-as-base {
     font-family: variable.$font-family--jp;
@@ -228,19 +225,6 @@
         font-size: variable.$font-size--arcive-pagination--pc;
         font-weight: variable.$font-weight--bold;
     }
-    
-    /*&.is-this {
-        @include mixin.mq(tablet) {
-            color: color.$color-font--pagination--this;
-            font-size: variable.$font-size--arcive-pagination--tablet;
-        }
-    
-        @include mixin.mq(pc) {
-            color: color.$color-font--pagination--this;
-            font-size: variable.$font-size--arcive-pagination--pc;
-        }
-
-    }*/
 }
 
 /*single ページ コンテンツエリア テキスト*/

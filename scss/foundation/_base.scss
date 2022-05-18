@@ -11,11 +11,6 @@
     box-sizing: border-box;
 }
 
-/*html {*/
-	/*font-size: 62.5%;*/
-/*}*/
-
-
 body {
 	font-family: variable.$font-family;
     line-height: variable.$line-height--normal;
@@ -56,13 +51,6 @@ input[type="submit"] ,
 input[type="search"]{
     -webkit-appearance: none;
 }
-
-/* buttonタグ リンクの初期設定 */
-/*button {
-    border: none;  */     /* 枠線なし*/
-    /*background-color: transparent; *//*背景色を無効にする*/
-    /*font-size: 0;*/
-/*}*/
 
 strong {
     font-weight: variable.$font-weight--bold;

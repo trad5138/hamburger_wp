@@ -38,21 +38,6 @@
     background-color: color.$color-bg--card; 
 }
 
-/* single page blockquote部の背景色 */
-.c-bgcolor-blockquote {
-    background-color: color.$color-bg--quote; 
-}
-
-/* single page code表示部の背景色 */
-.c-bgcolor-code {
-    background-color: color.$color-bg--html; 
-}
-
-/* single page table部の背景色 */
-.c-bgcolor-table {
-    background-color: color.$color-table--body; 
-}
-
 /* search page 検索結果 ない時のホームに戻るボタンの背景色 */
 .c-bgcolor-button_home {
     background-color: color.$color-bg--button--home; 

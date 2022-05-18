@@ -110,8 +110,6 @@
 .p-mainvisual-single-body {
     display: block;                      /* ブロック要素にする */
     position: relative;                  /* 表示位置の基準値を設定する */
-    //background-size: auto;              /* 画像の縦横比保持して全体に覆う*/
-    //background-position: center bottom; /* 画像は中央、下を基準に設定*/
     background-position: center center; /* 画像は中央、下を基準に設定*/
     background-repeat: no-repeat;
     background-size: cover;              /* 画像の縦横比保持して全体に覆う*/
@@ -155,7 +153,6 @@
     @include mixin.mq(tablet) {
         display: flex;
         align-items: center;
-        /*left: 8.5em;*/                  /* タブレットは、左から8.5emの位置に配置 */
         left: clamp(2em, 8vw, 8.5em);     /* タブレットは、左から8.5emの位置に配置 横幅狭くなると左余白を狭くする*/
     }
 

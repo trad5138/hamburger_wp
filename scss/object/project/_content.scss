@@ -14,8 +14,7 @@
 
     @include mixin.mq(pc) {
         /*padding: 5em 8em;*/        /* 内余白の設定 */
-        padding: 5em clamp(4em, 4.16vw, 8em);   /* 内余白-横余白伸縮の設定 */
-        
+        padding: 5em clamp(4em, 4.16vw, 8em);   /* 内余白-横余白伸縮の設定 */        
     }       
 }
 
@@ -32,36 +31,17 @@
     }  
 }
 
-/* contents テキストエリア */
-.p-content-archive-text {
-    padding: 1em 0 0 0;            /*内余白の設定*/
-
-    @include mixin.mq(tablet) {
-        padding: 1em 0;
-    }
-
-    @include mixin.mq(pc) {
-        padding: 1em 0 2em 0;
-    }      
-}
-
 /* single page ページ contents エリア */
 .p-content-si {
     display: block;
-    /*padding: 0 1.3em; */              /*内余白の設定*/
-    padding: 2em 1.3em;
+    padding: 2em 1.3em;                 /*内余白の設定*/
 
     @include mixin.mq(tablet) {
-        /*padding: 0 4em; */             /*内余白の設定*/
-        padding: 2em 4em;
-        /*padding: 0 clamp(2em, 3.9vw, 4em);*/        
+        padding: 2em 4em;             /*内余白の設定*/      
     }
 
     @include mixin.mq(pc) {
-        /*padding: 0 8em;*/        /* 内余白の設定 */
-        /*padding: 0 clamp(4em, 4.16vw, 8em); */  /* 内余白-横余白伸縮の設定 */
-        padding: 4em clamp(4em, 4.16vw, 8em);
-
+        padding: 4em clamp(4em, 4.16vw, 8em);   /* 内余白-横余白伸縮の設定 */
     }
     
     & > ol {
@@ -119,99 +99,6 @@
     
         @include mixin.mq(pc) {
             margin: 5rem 0;        
-        } 
-    }
-}
-
-/*  single page ページ 最下部の余白 */
-.p-content-si-margin {
-    display: block;
-    margin: 0;
-    padding-top: 9.5em;
-
-    @include mixin.mq(tablet) {
-        padding-top: 12em;
-    }
-
-    @include mixin.mq(pc) {
-        padding-top: 19em;       
-    } 
-}
-
-/* single page ページ contentsエリア blockquoteエリア の設定 */
-.p-content-blockquote {
-    padding: 0.1em 1.3em;
-
-    @include mixin.mq(tablet) {
-        padding: 0.1em 3em;
-    }
-
-    @include mixin.mq(pc) {
-        padding: 0.1em 3em;      
-    } 
-
-    & > p a {
-        text-decoration: underline;
-        color: color.$color-font--link;
-    }
-}
-
-/* single page ページ contentsエリア HTMLコードエリアの設定 */
-.p-content-pre {   
-    margin: 2rem 0;
-    padding: 1.5em 3em;
-    white-space: pre-wrap;
-
-    @include mixin.mq(tablet) {
-        margin: 5rem 0;
-    }
-
-    @include mixin.mq(pc) {
-        margin: 6rem 0;      
-    } 
-}
-
-/* single page ページ contentsエリア tableエリアの設定 */
-.p-content-table {  
-    width: 100%;  
-    margin: 3rem 0;          
-
-    @include mixin.mq(tablet) {
-        margin: 6rem 0;
-    }
-
-    @include mixin.mq(pc) {
-        margin: 5rem 0;       
-    } 
-
-    & td {
-        padding: 1.6em 1.8em; 
-        border: 1px solid color.$color-table--line;
-    }
-
-    /*テーブル 列１*/
-    &-item-1 {
-        width: 40%;
-        
-        @include mixin.mq(tablet) {
-            width: 29%;
-        }
-    
-        @include mixin.mq(pc) {
-            width: 42%;    
-        } 
-    }
-
-    /*テーブル 列２*/
-    &-item-2 {
-        width: 60%;
-
-        @include mixin.mq(tablet) {
-            width: 71%;
-        }
-    
-        @include mixin.mq(pc) {
-            width: 58%;    
         } 
     }
 }

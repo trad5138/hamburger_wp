@@ -15,7 +15,6 @@
     @include mixin.mq(pc) {
         flex-direction: row;    /* 子要素を横に並べる */
         justify-content: space-between;    /* 両端揃えに並べる */
-        /*align-items: center;*/
         height: 100%;
         width: 100%;
     }  
