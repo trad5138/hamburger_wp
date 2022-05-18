@@ -2487,8 +2487,8 @@ body.is-open {
     /* 表示位置を設定 */
     top: 0;
     left: 0;
-    -o-object-position: left bottom;
-       object-position: left bottom;
+    -o-object-position: center bottom;
+       object-position: center bottom;
   }
 }
 @media screen and (min-width: 1025px) {
@@ -2497,8 +2497,8 @@ body.is-open {
     /* 表示位置を設定 */
     top: 0;
     left: 0;
-    -o-object-position: left bottom;
-       object-position: left bottom;
+    -o-object-position: center bottom;
+       object-position: center bottom;
   }
 }
 

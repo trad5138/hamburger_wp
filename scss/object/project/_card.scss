@@ -65,14 +65,14 @@
                 position: absolute;     /* 表示位置を設定 */
                 top: 0;
                 left: 0;
-                object-position: left bottom; 
+                object-position: center bottom; 
             }
 
             @include mixin.mq(pc) {
                 position: absolute;     /* 表示位置を設定 */
                 top: 0;
-                left: 0;
-                object-position: left bottom; 
+                left: 0; 
+                object-position: center bottom; 
             } 
         }
     }
